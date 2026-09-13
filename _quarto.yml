@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "Basic Statistics"
+  author: "Mohammad Saifuddin"
+  date: today
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - central_tendency.qmd
+    - quantiles.qmd
+    - summary.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+

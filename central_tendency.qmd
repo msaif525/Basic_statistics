@@ -1,0 +1,107 @@
+# Introduction to Central Tendency
+
+**Central tendency** is a statistical concept used to describe the **center** or **typical value** of a dataset.
+
+Instead of looking at every individual data point, measures of central tendency provide a single summary value that represents the entire distribution.
+
+The three most common measures are the **mean, median**, and **mode**, each offering a different perspective on what constitutes the "center" of the data depending on its distribution and the presence of outliers.
+
+## Common Measures of Central Tendency
+
+1)  Mean / Average / Arithmetic mean
+2)  Median
+3)  Mode
+
+**Case I: Formula for Ungrouped / Raw Data**
+
+Consider a variable $X$ with "$n$" observations that is: $$X = \{x_1, x_2, \dots, x_n\}$$
+
+**A. Mean of** $X$: $$\bar{X} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\sum x}{n}$$
+
+**B. Median:** Middle most observation of an arranged data.
+
+**C. Mode:** Most frequent observation(s) in a data.
+
+**Example-1**
+
+Ten-count tests made on certain yarn have shown the following results: 22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 23.1, 23.0, 22.9, 23.0
+
+Compute mean, median and mode of the above data:
+
+**Solution:** $$n = 10; \sum x = 22.8 + 23.2 + \dots + 23.0 = 229.9$$
+
+**A) Mean:** $$\text{Mean} = \frac{\sum x}{n} = \frac{229.9}{10} = 22.99$$
+
+**B) Median:** Arranged $X$: 22.6, 22.8, 22.9, 22.9, 23.0, 23.0, 23.0, 23.1, 23.2, 23.4 $$\text{Median} = \frac{23.0 + 23.0}{2} = 23.0$$
+
+**C) Mode:** $$\text{Mode} = 23.0 \text{ (observed 3 times uniquely)}$$
+
+------------------------------------------------------------------------
+
+**Case II: Formula for Grouped / Frequency Distribution**
+
+Consider the following frequency distribution:
+
+| Class interval   | Mid value ($x_i$)   | Frequency ($f_i$)        |
+|:-----------------|:--------------------|:-------------------------|
+| $[L_1, L_2)$     | $x_1 = (L_1+L_2)/2$ | $f_1$                    |
+| $[L_2, L_3)$     | $x_2$               | $f_2$                    |
+| ...              | ...                 | ...                      |
+| $[L_k, L_{k+1})$ | $x_k$               | $f_k$                    |
+| **Total**        |                     | $N = \sum_{i=1}^{k} f_i$ |
+
+**A) Mean:**
+
+$$\text{Mean} = \frac{f_1 x_1 + f_2 x_2 + \cdots + f_k x_k}{f_1 + f_2 + \cdots + f_k} = \frac{\sum_{i=1}^{k} f_i x_i}{N} = \frac{\sum fx}{N}$$
+
+**B) Median:**
+
+$$\text{Median} = L_o + \frac{c}{f} \left(\frac{N}{2} - p.cf\right)$$
+
+*Where:*
+
+$L_o$ = Lower limit of Median class
+
+$c$ = class interval of Median class
+
+$f$ = frequency of Median class
+
+$p.cf$ = cf (cumulative frequency of pre median class)
+
+**C) Mode:** \[For approximately symmetric distribution\] $$\text{Mode} = L_o + \frac{\Delta_1}{\Delta_1 + \Delta_2} \times c$$ *Where:*
+
+$L_o$ = Lower limit of Modal class
+
+$c$ = class interval of Modal class
+
+$\Delta_1$ = differences between frequencies of pre modal and modal class
+
+$\Delta_2$ = differences between frequencies of post modal and modal class
+
+**Example-2** Determine the mean, median and mode from the following frequency distribution and comment on it.
+
+| Length of fiber(mm) | 10–15 | 15–20 | 20–25 | 25–30 | 30–35 | 35–40 |
+|:--------------------|:------|:------|:------|:------|:------|:------|
+| **No. of fibers**   | 12    | 19    | 26    | 21    | 15    | 9     |
+
+**Solution:**
+
+| Length of fiber(mm) | $f$     | Mid-value ($x$) | $fx$             | $cf$ |
+|:--------------------|:--------|:----------------|:-----------------|:-----|
+| 10–15               | 12      | 12.5            | 150              | 12   |
+| 15–20               | 19      | 17.5            | 332.5            | 31   |
+| 20–25               | 26      | 22.5            | 585              | 57   |
+| 25–30               | 21      | 27.5            | 577.5            | 78   |
+| 30–35               | 15      | 32.5            | 487.5            | 93   |
+| 35–40               | 9       | 37.5            | 337.5            | 102  |
+| **Total**           | $N=102$ |                 | $\sum fx = 2470$ |      |
+
+**A) Mean:** $$\text{Mean} = \frac{\sum fx}{N} = \frac{2470}{102} = 24.22$$
+
+**B) Median:** To determine median we have to identify the "Median" class. First calculate cumulative frequency ($cf$). Then, calculate: $$\frac{N}{2} = \frac{102}{2} = 51$$ This is less than the $cf=57$ which corresponds to class interval 20-25.
+
+$$\text{Median} = L_o + \frac{c}{f} \left(\frac{N}{2} - p.cf\right) = 20 + \frac{5}{26} (51 - 31) = 23.85$$
+
+**C) Mode:** Here the highest frequency is $f=26$, located in the class interval 20-25. So, 20-25 is the modal class. $$\Delta_1 = 26 - 19 = 7; \quad \Delta_2 = 26 - 21 = 5$$
+
+$$\text{Mode} = L_o + \frac{\Delta_1}{\Delta_1 + \Delta_2} \times c = 20 + \frac{7}{7+5} \times 5 = 22.92$$
