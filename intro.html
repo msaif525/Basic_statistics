@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.26">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>1&nbsp; Introduction to Statistics – Basic Statistics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./central_tendency.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-70a47bd5681a7291082a5b9f83d58762.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Statistics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Basic Statistics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Statistics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./central_tendency.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Central Tendency</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quantiles.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partition values (quantiles)</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Summary</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#data-sets" id="toc-data-sets" class="nav-link active" data-scroll-target="#data-sets"><span class="header-section-number">1.1</span> Data Sets</a></li>
+  <li><a href="#branches-of-statistics" id="toc-branches-of-statistics" class="nav-link" data-scroll-target="#branches-of-statistics"><span class="header-section-number">1.2</span> Branches of Statistics</a></li>
+  <li><a href="#application-of-probability-and-statistics-in-engineering" id="toc-application-of-probability-and-statistics-in-engineering" class="nav-link" data-scroll-target="#application-of-probability-and-statistics-in-engineering"><span class="header-section-number">1.3</span> Application of Probability and Statistics in Engineering</a>
+  <ul class="collapse">
+  <li><a href="#why-textile-engineers-study-statistics" id="toc-why-textile-engineers-study-statistics" class="nav-link" data-scroll-target="#why-textile-engineers-study-statistics"><span class="header-section-number">1.3.1</span> Why Textile Engineers Study Statistics</a></li>
+  </ul></li>
+  <li><a href="#types-of-variables-data" id="toc-types-of-variables-data" class="nav-link" data-scroll-target="#types-of-variables-data"><span class="header-section-number">1.4</span> Types of Variables / Data</a></li>
+  <li><a href="#qualitative-categorical-variables" id="toc-qualitative-categorical-variables" class="nav-link" data-scroll-target="#qualitative-categorical-variables"><span class="header-section-number">1.5</span> Qualitative (Categorical) Variables</a></li>
+  <li><a href="#quantitative-variables" id="toc-quantitative-variables" class="nav-link" data-scroll-target="#quantitative-variables"><span class="header-section-number">1.6</span> Quantitative Variables</a>
+  <ul class="collapse">
+  <li><a href="#sub-divisions" id="toc-sub-divisions" class="nav-link" data-scroll-target="#sub-divisions"><span class="header-section-number">1.6.1</span> Sub-divisions</a></li>
+  </ul></li>
+  <li><a href="#data-collection-and-experimental-design" id="toc-data-collection-and-experimental-design" class="nav-link" data-scroll-target="#data-collection-and-experimental-design"><span class="header-section-number">1.7</span> Data Collection and Experimental Design</a></li>
+  <li><a href="#observational-study-vs.-experiment" id="toc-observational-study-vs.-experiment" class="nav-link" data-scroll-target="#observational-study-vs.-experiment"><span class="header-section-number">1.8</span> Observational Study vs.&nbsp;Experiment</a></li>
+  <li><a href="#data-management-arrays" id="toc-data-management-arrays" class="nav-link" data-scroll-target="#data-management-arrays"><span class="header-section-number">1.9</span> Data Management &amp; Arrays</a></li>
+  <li><a href="#frequency-distribution" id="toc-frequency-distribution" class="nav-link" data-scroll-target="#frequency-distribution"><span class="header-section-number">2</span> 2.Frequency distribution</a>
+  <ul class="collapse">
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2.1</span> 2. Exercise</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Statistics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<ul>
+<li><strong>Data:</strong> Data consists of information coming from observations, counts, measurements, or responses. <em>(Ron Larson)</em></li>
+<li><strong>Statistics:</strong> Statistics is the science of collecting, organizing, analyzing, and interpreting data in order to make decisions. <em>(Ron Larson)</em></li>
+</ul>
+<section id="data-sets" class="level2" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="data-sets"><span class="header-section-number">1.1</span> Data Sets</h2>
+<p>There are two types of data sets you will use when studying statistics: <strong>populations</strong> and <strong>samples</strong>.</p>
+<ul>
+<li><strong>Population:</strong> The entire collection of objects or outcomes about which data are collected.
+<ul>
+<li>A <strong>parameter</strong> refers to a numerical quantity computed from a population.</li>
+</ul></li>
+<li><strong>Sample:</strong> A subset of the population containing the observed objects or outcomes and the resulting data.
+<ul>
+<li>A <strong>statistic</strong> (rather than the field of “statistics”) refers to a numerical quantity computed from sample data (e.g., the mean, the median, the maximum).</li>
+</ul></li>
+</ul>
+<hr>
+</section>
+<section id="branches-of-statistics" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="branches-of-statistics"><span class="header-section-number">1.2</span> Branches of Statistics</h2>
+<p>The study of statistics has two major branches:</p>
+<ol type="1">
+<li><p><strong>Descriptive Statistics:</strong> Describes the important characteristics/properties of the data using measures of central tendency (mean, median, mode) and measures of dispersion (range, standard deviation, variance). Data can be summarized and represented using charts, tables, and graphs.</p></li>
+<li><p><strong>Inferential Statistics:</strong> Uses data from a sample to make inferences about the larger population from which the sample was drawn. The goal is to draw conclusions from a sample and generalize them to the population using probability theory.</p>
+<p>Common methodologies include hypothesis tests and Analysis of Variance (ANOVA).</p></li>
+</ol>
+<p>Figure 1 shows the fundamental relationship between probability and inferential statistics:</p>
+<p><img src="images/clipboard-2326232020.png" class="img-fluid" width="466"></p>
+</section>
+<section id="application-of-probability-and-statistics-in-engineering" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="application-of-probability-and-statistics-in-engineering"><span class="header-section-number">1.3</span> Application of Probability and Statistics in Engineering</h2>
+<ul>
+<li><strong>Electrical Engineering:</strong> Signals and noise are analyzed using probability theory.</li>
+<li><strong>Civil, Mechanical, &amp; Industrial Engineering:</strong> Used to test and account for variations in materials and goods.</li>
+<li><strong>Chemical Engineering:</strong> Used to assess experimental data and control/improve chemical processes.</li>
+</ul>
+<section id="why-textile-engineers-study-statistics" class="level3" data-number="1.3.1">
+<h3 data-number="1.3.1" class="anchored" data-anchor-id="why-textile-engineers-study-statistics"><span class="header-section-number">1.3.1</span> Why Textile Engineers Study Statistics</h3>
+<p>Textile engineers study variations occurring from material to material, test to test, sample to sample, machine to machine, time to time, and place to place. Key questions include:</p>
+<ol type="1">
+<li>How many tests are to be carried out to get the desired results?</li>
+<li>How to analyze the collected data?</li>
+<li>How to interpret the results of the analysis?</li>
+</ol>
+<hr>
+</section>
+</section>
+<section id="types-of-variables-data" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="types-of-variables-data"><span class="header-section-number">1.4</span> Types of Variables / Data</h2>
+<p>Data sets can consist of two types of data: <strong>Qualitative (Categorical)</strong> and <strong>Quantitative</strong>.</p>
+</section>
+<section id="qualitative-categorical-variables" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="qualitative-categorical-variables"><span class="header-section-number">1.5</span> Qualitative (Categorical) Variables</h2>
+<p>Consist of attributes, labels, or non-numerical entries. Values are intrinsically non-numeric. * <em>Examples:</em> Cause of death, nationality, race, gender, severity of pain (mild, moderate, severe).</p>
+</section>
+<section id="quantitative-variables" class="level2" data-number="1.6">
+<h2 data-number="1.6" class="anchored" data-anchor-id="quantitative-variables"><span class="header-section-number">1.6</span> Quantitative Variables</h2>
+<p>Consist of numerical measurements or counts where arithmetic operations make sense. * <em>Examples:</em> Number of defective items, systolic blood pressure, height, age.</p>
+<section id="sub-divisions" class="level3" data-number="1.6.1">
+<h3 data-number="1.6.1" class="anchored" data-anchor-id="sub-divisions"><span class="header-section-number">1.6.1</span> Sub-divisions</h3>
+<ul>
+<li><strong>Discrete Variables:</strong> Have a set of possible values that is finite or countably infinite, with gaps between possible values. Often integer values/counts. <em>(e.g., number of pregnancies, shoe size)</em></li>
+<li><strong>Continuous Variables:</strong> Can take any value within an interval of the real line with no gaps. <em>(e.g., duration of a seizure, BMI, height)</em></li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="data-collection-and-experimental-design" class="level2" data-number="1.7">
+<h2 data-number="1.7" class="anchored" data-anchor-id="data-collection-and-experimental-design"><span class="header-section-number">1.7</span> Data Collection and Experimental Design</h2>
+<p><strong>Guidelines for Designing a Statistical Study</strong></p>
+<ol type="1">
+<li>Identify the variable(s) of interest and the target population.</li>
+<li>Develop a detailed plan for collecting data (ensure samples are representative).</li>
+<li>Collect the data.</li>
+<li>Describe the data using descriptive statistics.</li>
+<li>Interpret data and make decisions using inferential statistics.</li>
+<li>Identify possible errors.</li>
+</ol>
+</section>
+<section id="observational-study-vs.-experiment" class="level2" data-number="1.8">
+<h2 data-number="1.8" class="anchored" data-anchor-id="observational-study-vs.-experiment"><span class="header-section-number">1.8</span> Observational Study vs.&nbsp;Experiment</h2>
+<ul>
+<li><strong>Observational Study:</strong> The researcher observes and measures characteristics of interest without influencing or changing existing conditions.</li>
+<li><strong>Experiment:</strong> A treatment is deliberately applied to part of a population (treatment group) and responses are observed. A control group (often given a placebo) is used for comparison.</li>
+</ul>
+</section>
+<section id="data-management-arrays" class="level2" data-number="1.9">
+<h2 data-number="1.9" class="anchored" data-anchor-id="data-management-arrays"><span class="header-section-number">1.9</span> Data Management &amp; Arrays</h2>
+<p>Data management refers to processing steps occurring after collection but before analysis. Statistical software operates primarily on rectangular arrays where <strong>rows = cases</strong> and <strong>columns = variables</strong>.</p>
+<p><strong>Example: Medical Expenditures Data Set</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<caption>Typical Rectangular Data Set</caption>
+<thead>
+<tr class="header">
+<th style="text-align: right;">ID</th>
+<th style="text-align: right;">Age</th>
+<th style="text-align: left;">State</th>
+<th style="text-align: right;">Expenditures</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: right;">132414</td>
+<td style="text-align: right;">33</td>
+<td style="text-align: left;">DHK</td>
+<td style="text-align: right;">375</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">454543</td>
+<td style="text-align: right;">25</td>
+<td style="text-align: left;">CTG</td>
+<td style="text-align: right;">1450</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">232134</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: left;">RAJ</td>
+<td style="text-align: right;">908</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">314132</td>
+<td style="text-align: right;">55</td>
+<td style="text-align: left;">KHL</td>
+<td style="text-align: right;">3480</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">453255</td>
+<td style="text-align: right;">46</td>
+<td style="text-align: left;">CTG</td>
+<td style="text-align: right;">2480</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">543545</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: left;">CTG</td>
+<td style="text-align: right;">8550</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">342342</td>
+<td style="text-align: right;">28</td>
+<td style="text-align: left;">BAR</td>
+<td style="text-align: right;">320</td>
+</tr>
+<tr class="even">
+<td style="text-align: right;">563654</td>
+<td style="text-align: right;">41</td>
+<td style="text-align: left;">NOA</td>
+<td style="text-align: right;">24350</td>
+</tr>
+<tr class="odd">
+<td style="text-align: right;">465566</td>
+<td style="text-align: right;">27</td>
+<td style="text-align: left;">DHK</td>
+<td style="text-align: right;">1850</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="frequency-distribution" class="level1" data-number="2">
+<h1 data-number="2"><span class="header-section-number">2</span> 2.Frequency distribution</h1>
+<p><strong>1) Ungrouped (discrete)</strong> - Usually used to understand the distribution of count data</p>
+<p><strong>2) Grouped (continuous)</strong> - Usually used to understand the distribution of scale data</p>
+<p><strong>Example-1:</strong> Construct the frequency distribution for the following data of number of weaving defects observed in the 30 pieces of fabric. 4, 0, 1, 5, 2, 6, 0, 4, 4, 1, 5, 4, 5, 4, 3, 0, 2, 3, 3, 2, 6, 4, 1, 2, 1, 3, 4, 3, 2, 3.</p>
+<p><strong>Solution:</strong> Here, Minimum= 0 Maximum=6</p>
+<p>So, the frequency table/distribution of number of weaving defects is:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Number of defects</th>
+<th style="text-align: center;">Tally</th>
+<th style="text-align: center;">Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>Answer:</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">No.&nbsp;of defects</th>
+<th style="text-align: center;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">6</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">7</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">2</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example-2:</strong> Following are the results of ‘hairiness index’ obtained from 20 tests: 6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62. Construct the grouped frequency distribution by taking suitable/ appropriate class interval in exclusive method.</p>
+<p><strong>Solution:</strong> Here, Minimum=6.0; Maximum=7.2 ; Range, R= Maximum- Minimum=7.2-6.0=1.2; n = 20</p>
+<p>So, class interval, c = <span class="math display">\[c = \frac{R}{(1+3.32*\log_{10} n)} = \frac{1.2}{(1+3.32*\log_{10} 20)} = 0.23 \approx 0.20\]</span></p>
+<p>Hence in exclusive method; required classes are: [6.0,6.20), [6.20, 6.40), [6.40,6.60), [6.60,6.80), [6.80,7.00), [7.00, 7.20), [7.20, 7.40)</p>
+<p><strong>Frequency distribution of hairiness index (n=20):</strong></p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Class interval</th>
+<th>Tally</th>
+<th>Frequency</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[6.0,6.20)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>[6.20, 6.40)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>[6.40,6.60)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>[6.60,6.80)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>[6.80,7.00)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td>[7.00, 7.20)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>[7.20, 7.40)</td>
+<td></td>
+<td></td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">Class interval</th>
+<th style="text-align: center;">Freq</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">[6,6.2)</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">[6.2,6.4)</td>
+<td style="text-align: center;">3</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">[6.4,6.6)</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">[6.6,6.8)</td>
+<td style="text-align: center;">5</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">[6.8,7)</td>
+<td style="text-align: center;">4</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">[7,7.2)</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">[7.2,7.4)</td>
+<td style="text-align: center;">1</td>
+</tr>
+</tbody>
+</table>
+<p><em>Histogram of ‘hairiness index’ data:</em></p>
+<p><img src="images/clipboard-971494008.png" class="img-fluid" width="586"></p>
+<p><strong>Relative, percent and cumulative frequency distribution- example with the ‘hairiness index’ data</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Class interval</th>
+<th>Frequency</th>
+<th>Relative frequency (rf)</th>
+<th>Percent frequency(pf)</th>
+<th>Cumulative frequency (cf)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>[6.0,6.20)</td>
+<td>2</td>
+<td>0.10</td>
+<td>10</td>
+<td>2</td>
+</tr>
+<tr class="even">
+<td>[6.20,6.40)</td>
+<td>3</td>
+<td>0.15</td>
+<td>15</td>
+<td>5</td>
+</tr>
+<tr class="odd">
+<td>[6.40,6.60)</td>
+<td>4</td>
+<td>0.20</td>
+<td>20</td>
+<td>9</td>
+</tr>
+<tr class="even">
+<td>[6.60,6.80)</td>
+<td>5</td>
+<td>0.25</td>
+<td>25</td>
+<td>14</td>
+</tr>
+<tr class="odd">
+<td>[6.80,7.00)</td>
+<td>4</td>
+<td>0.20</td>
+<td>20</td>
+<td>18</td>
+</tr>
+<tr class="even">
+<td>[7.00,7.20)</td>
+<td>1</td>
+<td>0.05</td>
+<td>5</td>
+<td>19</td>
+</tr>
+<tr class="odd">
+<td>[7.20,7.40)</td>
+<td>1</td>
+<td>0.05</td>
+<td>5</td>
+<td>20</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td><strong>20</strong></td>
+<td><strong>1.00</strong></td>
+<td><strong>100.00</strong></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<section id="exercise" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2.1</span> 2. Exercise</h2>
+<ol type="1">
+<li><p>Construct the frequency distribution for the following data of number of weaving defects observed in the 30 pieces of fabric. 4, 0, 1, 5, 2, 6, 0, 4, 4, 1, 5, 4, 5, 4, 3, 0, 2, 3, 3, 2, 6, 4, 1, 2, 1, 3, 4, 3, 2, 3</p></li>
+<li><p>Construct the ungrouped frequency distribution for the following data of number of end breaks observed on a ring frame for the 30 days. 10, 8, 5, 10, 7, 7, 11, 8, 10, 12, 11, 12, 6, 6, 7, 10, 10, 12, 10, 10, 6, 7, 8, 10, 8, 8, 12, 11, 10, 10</p></li>
+<li><p>Following are the figures of number of workers absent in a textile mill every day: 2, 3, 1, 1, 2, 3, 2, 0, 0, 1, 2, 5, 0, 0, 2,1, 1, 4, 3, 2, 0, 2, 1, 2, 2, 4, 3, 3, 3, 4 Construct the ungrouped frequency distribution for the above data.</p></li>
+</ol>
+<p>**4. Following are the results of ‘hairiness index’ obtained from 20 tests: 6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62 Construct the grouped frequency distribution by taking classes 6.00–6.20, 6.20–6.40 and so on.</p>
+<ol start="5" type="1">
+<li>Following are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.</li>
+</ol>
+<p>**5. Following are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.</p>
+<ol start="6" type="1">
+<li><p>Thirty pieces of fabric were observed for the number of defects and following results were obtained. 1, 0, 0, 2, 3, 2, 1, 1, 3, 2, 4, 3, 4, 1, 1, 2, 0, 0, 5, 2, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3 Construct an ungrouped frequency distribution.</p></li>
+<li><p>Construct the frequency distribution for the following results of the daily sale (in 1000 Rs.) in a textile firm recorded for a month. 21, 21, 21, 22, 26, 20, 20, 20, 21, 21, 20, 20, 22, 20, 21, 23, 21, 22, 21, 25, 18, 24, 25, 19, 25, 18, 26, 23, 18, 24</p></li>
+</ol>
+<p>**8. Thirty linear density tests made on the yarn have shown following results. 14.8, 14.2, 13.8, 13.5, 14.0, 14.2, 14.3, 14.6, 13.9, 14.0, 14.1, 13.2, 13.0, 14.2, 13.5, 13.0, 12.8, 13.9, 14.8, 15.0, 12.8, 13.4, 13.2, 14.0, 13.8, 13.9, 14.0, 14.0, 13.9, 14.8 Construct the grouped frequency distribution by taking class intervals 12.6–13.0; 13.1–13.5 and so on.</p>
+<ol start="9" type="1">
+<li>Following is the distribution of fabric samples according to the strength of fabric:</li>
+</ol>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Strength</th>
+<th>150–155</th>
+<th>155–160</th>
+<th>160–165</th>
+<th>165–170</th>
+<th>170–175</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>No.&nbsp;of samples</strong></td>
+<td>8</td>
+<td>12</td>
+<td>17</td>
+<td>10</td>
+<td>7</td>
+</tr>
+</tbody>
+</table>
+<p>Draw the histogram for the above data and interpret it.</p>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="Preface">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Preface</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./central_tendency.html" class="pagination-link" aria-label="Introduction to Central Tendency">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Central Tendency</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -1,0 +1,152 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Basic Statistics",
+    "section": "",
+    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "Preface"
+    ]
+  },
+  {
+    "objectID": "intro.html",
+    "href": "intro.html",
+    "title": "1  Introduction to Statistics",
+    "section": "",
+    "text": "1.1 Data Sets\nThere are two types of data sets you will use when studying statistics: populations and samples.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-sets",
+    "href": "intro.html#data-sets",
+    "title": "1  Introduction to Statistics",
+    "section": "",
+    "text": "Population: The entire collection of objects or outcomes about which data are collected.\n\nA parameter refers to a numerical quantity computed from a population.\n\nSample: A subset of the population containing the observed objects or outcomes and the resulting data.\n\nA statistic (rather than the field of “statistics”) refers to a numerical quantity computed from sample data (e.g., the mean, the median, the maximum).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#branches-of-statistics",
+    "href": "intro.html#branches-of-statistics",
+    "title": "1  Introduction to Statistics",
+    "section": "1.2 Branches of Statistics",
+    "text": "1.2 Branches of Statistics\nThe study of statistics has two major branches:\n\nDescriptive Statistics: Describes the important characteristics/properties of the data using measures of central tendency (mean, median, mode) and measures of dispersion (range, standard deviation, variance). Data can be summarized and represented using charts, tables, and graphs.\nInferential Statistics: Uses data from a sample to make inferences about the larger population from which the sample was drawn. The goal is to draw conclusions from a sample and generalize them to the population using probability theory.\nCommon methodologies include hypothesis tests and Analysis of Variance (ANOVA).\n\nFigure 1 shows the fundamental relationship between probability and inferential statistics:",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#application-of-probability-and-statistics-in-engineering",
+    "href": "intro.html#application-of-probability-and-statistics-in-engineering",
+    "title": "1  Introduction to Statistics",
+    "section": "1.3 Application of Probability and Statistics in Engineering",
+    "text": "1.3 Application of Probability and Statistics in Engineering\n\nElectrical Engineering: Signals and noise are analyzed using probability theory.\nCivil, Mechanical, & Industrial Engineering: Used to test and account for variations in materials and goods.\nChemical Engineering: Used to assess experimental data and control/improve chemical processes.\n\n\n1.3.1 Why Textile Engineers Study Statistics\nTextile engineers study variations occurring from material to material, test to test, sample to sample, machine to machine, time to time, and place to place. Key questions include:\n\nHow many tests are to be carried out to get the desired results?\nHow to analyze the collected data?\nHow to interpret the results of the analysis?",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#types-of-variables-data",
+    "href": "intro.html#types-of-variables-data",
+    "title": "1  Introduction to Statistics",
+    "section": "1.4 Types of Variables / Data",
+    "text": "1.4 Types of Variables / Data\nData sets can consist of two types of data: Qualitative (Categorical) and Quantitative.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#qualitative-categorical-variables",
+    "href": "intro.html#qualitative-categorical-variables",
+    "title": "1  Introduction to Statistics",
+    "section": "1.5 Qualitative (Categorical) Variables",
+    "text": "1.5 Qualitative (Categorical) Variables\nConsist of attributes, labels, or non-numerical entries. Values are intrinsically non-numeric. * Examples: Cause of death, nationality, race, gender, severity of pain (mild, moderate, severe).",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#quantitative-variables",
+    "href": "intro.html#quantitative-variables",
+    "title": "1  Introduction to Statistics",
+    "section": "1.6 Quantitative Variables",
+    "text": "1.6 Quantitative Variables\nConsist of numerical measurements or counts where arithmetic operations make sense. * Examples: Number of defective items, systolic blood pressure, height, age.\n\n1.6.1 Sub-divisions\n\nDiscrete Variables: Have a set of possible values that is finite or countably infinite, with gaps between possible values. Often integer values/counts. (e.g., number of pregnancies, shoe size)\nContinuous Variables: Can take any value within an interval of the real line with no gaps. (e.g., duration of a seizure, BMI, height)",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-collection-and-experimental-design",
+    "href": "intro.html#data-collection-and-experimental-design",
+    "title": "1  Introduction to Statistics",
+    "section": "1.7 Data Collection and Experimental Design",
+    "text": "1.7 Data Collection and Experimental Design\nGuidelines for Designing a Statistical Study\n\nIdentify the variable(s) of interest and the target population.\nDevelop a detailed plan for collecting data (ensure samples are representative).\nCollect the data.\nDescribe the data using descriptive statistics.\nInterpret data and make decisions using inferential statistics.\nIdentify possible errors.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#observational-study-vs.-experiment",
+    "href": "intro.html#observational-study-vs.-experiment",
+    "title": "1  Introduction to Statistics",
+    "section": "1.8 Observational Study vs. Experiment",
+    "text": "1.8 Observational Study vs. Experiment\n\nObservational Study: The researcher observes and measures characteristics of interest without influencing or changing existing conditions.\nExperiment: A treatment is deliberately applied to part of a population (treatment group) and responses are observed. A control group (often given a placebo) is used for comparison.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#data-management-arrays",
+    "href": "intro.html#data-management-arrays",
+    "title": "1  Introduction to Statistics",
+    "section": "1.9 Data Management & Arrays",
+    "text": "1.9 Data Management & Arrays\nData management refers to processing steps occurring after collection but before analysis. Statistical software operates primarily on rectangular arrays where rows = cases and columns = variables.\nExample: Medical Expenditures Data Set\n\n\n\nTypical Rectangular Data Set\n\n\nID\nAge\nState\nExpenditures\n\n\n\n\n132414\n33\nDHK\n375\n\n\n454543\n25\nCTG\n1450\n\n\n232134\n41\nRAJ\n908\n\n\n314132\n55\nKHL\n3480\n\n\n453255\n46\nCTG\n2480\n\n\n543545\n35\nCTG\n8550\n\n\n342342\n28\nBAR\n320\n\n\n563654\n41\nNOA\n24350\n\n\n465566\n27\nDHK\n1850",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "intro.html#exercise",
+    "href": "intro.html#exercise",
+    "title": "1  Introduction to Statistics",
+    "section": "2.1 2. Exercise",
+    "text": "2.1 2. Exercise\n\nConstruct the frequency distribution for the following data of number of weaving defects observed in the 30 pieces of fabric. 4, 0, 1, 5, 2, 6, 0, 4, 4, 1, 5, 4, 5, 4, 3, 0, 2, 3, 3, 2, 6, 4, 1, 2, 1, 3, 4, 3, 2, 3\nConstruct the ungrouped frequency distribution for the following data of number of end breaks observed on a ring frame for the 30 days. 10, 8, 5, 10, 7, 7, 11, 8, 10, 12, 11, 12, 6, 6, 7, 10, 10, 12, 10, 10, 6, 7, 8, 10, 8, 8, 12, 11, 10, 10\nFollowing are the figures of number of workers absent in a textile mill every day: 2, 3, 1, 1, 2, 3, 2, 0, 0, 1, 2, 5, 0, 0, 2,1, 1, 4, 3, 2, 0, 2, 1, 2, 2, 4, 3, 3, 3, 4 Construct the ungrouped frequency distribution for the above data.\n\n**4. Following are the results of ‘hairiness index’ obtained from 20 tests: 6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62 Construct the grouped frequency distribution by taking classes 6.00–6.20, 6.20–6.40 and so on.\n\nFollowing are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.\n\n**5. Following are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.\n\nThirty pieces of fabric were observed for the number of defects and following results were obtained. 1, 0, 0, 2, 3, 2, 1, 1, 3, 2, 4, 3, 4, 1, 1, 2, 0, 0, 5, 2, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3 Construct an ungrouped frequency distribution.\nConstruct the frequency distribution for the following results of the daily sale (in 1000 Rs.) in a textile firm recorded for a month. 21, 21, 21, 22, 26, 20, 20, 20, 21, 21, 20, 20, 22, 20, 21, 23, 21, 22, 21, 25, 18, 24, 25, 19, 25, 18, 26, 23, 18, 24\n\n**8. Thirty linear density tests made on the yarn have shown following results. 14.8, 14.2, 13.8, 13.5, 14.0, 14.2, 14.3, 14.6, 13.9, 14.0, 14.1, 13.2, 13.0, 14.2, 13.5, 13.0, 12.8, 13.9, 14.8, 15.0, 12.8, 13.4, 13.2, 14.0, 13.8, 13.9, 14.0, 14.0, 13.9, 14.8 Construct the grouped frequency distribution by taking class intervals 12.6–13.0; 13.1–13.5 and so on.\n\nFollowing is the distribution of fabric samples according to the strength of fabric:\n\n\n\n\nStrength\n150–155\n155–160\n160–165\n165–170\n170–175\n\n\n\n\nNo. of samples\n8\n12\n17\n10\n7\n\n\n\nDraw the histogram for the above data and interpret it.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>Introduction to Statistics</span>"
+    ]
+  },
+  {
+    "objectID": "central_tendency.html",
+    "href": "central_tendency.html",
+    "title": "2  Introduction to Central Tendency",
+    "section": "",
+    "text": "2.1 Common Measures of Central Tendency\nCentral tendency is a statistical concept used to describe the center or typical value of a dataset.\nInstead of looking at every individual data point, measures of central tendency provide a single summary value that represents the entire distribution.\nThe three most common measures are the mean, median, and mode, each offering a different perspective on what constitutes the “center” of the data depending on its distribution and the presence of outliers.\nCase I: Formula for Ungrouped / Raw Data\nConsider a variable \\(X\\) with “\\(n\\)” observations that is: \\[X = \\{x_1, x_2, \\dots, x_n\\}\\]\nA. Mean of \\(X\\): \\[\\bar{X} = \\frac{x_1 + x_2 + \\cdots + x_n}{n} = \\frac{\\sum x}{n}\\]\nB. Median: Middle most observation of an arranged data.\nC. Mode: Most frequent observation(s) in a data.\nExample-1\nTen-count tests made on certain yarn have shown the following results: 22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 23.1, 23.0, 22.9, 23.0\nCompute mean, median and mode of the above data:\nSolution: \\[n = 10; \\sum x = 22.8 + 23.2 + \\dots + 23.0 = 229.9\\]\nA) Mean: \\[\\text{Mean} = \\frac{\\sum x}{n} = \\frac{229.9}{10} = 22.99\\]\nB) Median: Arranged \\(X\\): 22.6, 22.8, 22.9, 22.9, 23.0, 23.0, 23.0, 23.1, 23.2, 23.4 \\[\\text{Median} = \\frac{23.0 + 23.0}{2} = 23.0\\]\nC) Mode: \\[\\text{Mode} = 23.0 \\text{ (observed 3 times uniquely)}\\]\nCase II: Formula for Grouped / Frequency Distribution\nConsider the following frequency distribution:\nA) Mean:\n\\[\\text{Mean} = \\frac{f_1 x_1 + f_2 x_2 + \\cdots + f_k x_k}{f_1 + f_2 + \\cdots + f_k} = \\frac{\\sum_{i=1}^{k} f_i x_i}{N} = \\frac{\\sum fx}{N}\\]\nB) Median:\n\\[\\text{Median} = L_o + \\frac{c}{f} \\left(\\frac{N}{2} - p.cf\\right)\\]\nWhere:\n\\(L_o\\) = Lower limit of Median class\n\\(c\\) = class interval of Median class\n\\(f\\) = frequency of Median class\n\\(p.cf\\) = cf (cumulative frequency of pre median class)\nC) Mode: [For approximately symmetric distribution] \\[\\text{Mode} = L_o + \\frac{\\Delta_1}{\\Delta_1 + \\Delta_2} \\times c\\] Where:\n\\(L_o\\) = Lower limit of Modal class\n\\(c\\) = class interval of Modal class\n\\(\\Delta_1\\) = differences between frequencies of pre modal and modal class\n\\(\\Delta_2\\) = differences between frequencies of post modal and modal class\nExample-2 Determine the mean, median and mode from the following frequency distribution and comment on it.\nSolution:\nA) Mean: \\[\\text{Mean} = \\frac{\\sum fx}{N} = \\frac{2470}{102} = 24.22\\]\nB) Median: To determine median we have to identify the “Median” class. First calculate cumulative frequency (\\(cf\\)). Then, calculate: \\[\\frac{N}{2} = \\frac{102}{2} = 51\\] This is less than the \\(cf=57\\) which corresponds to class interval 20-25.\n\\[\\text{Median} = L_o + \\frac{c}{f} \\left(\\frac{N}{2} - p.cf\\right) = 20 + \\frac{5}{26} (51 - 31) = 23.85\\]\nC) Mode: Here the highest frequency is \\(f=26\\), located in the class interval 20-25. So, 20-25 is the modal class. \\[\\Delta_1 = 26 - 19 = 7; \\quad \\Delta_2 = 26 - 21 = 5\\]\n\\[\\text{Mode} = L_o + \\frac{\\Delta_1}{\\Delta_1 + \\Delta_2} \\times c = 20 + \\frac{7}{7+5} \\times 5 = 22.92\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Central Tendency</span>"
+    ]
+  },
+  {
+    "objectID": "central_tendency.html#common-measures-of-central-tendency",
+    "href": "central_tendency.html#common-measures-of-central-tendency",
+    "title": "2  Introduction to Central Tendency",
+    "section": "",
+    "text": "Mean / Average / Arithmetic mean\nMedian\nMode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClass interval\nMid value (\\(x_i\\))\nFrequency (\\(f_i\\))\n\n\n\n\n\\([L_1, L_2)\\)\n\\(x_1 = (L_1+L_2)/2\\)\n\\(f_1\\)\n\n\n\\([L_2, L_3)\\)\n\\(x_2\\)\n\\(f_2\\)\n\n\n…\n…\n…\n\n\n\\([L_k, L_{k+1})\\)\n\\(x_k\\)\n\\(f_k\\)\n\n\nTotal\n\n\\(N = \\sum_{i=1}^{k} f_i\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLength of fiber(mm)\n10–15\n15–20\n20–25\n25–30\n30–35\n35–40\n\n\n\n\nNo. of fibers\n12\n19\n26\n21\n15\n9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLength of fiber(mm)\n\\(f\\)\nMid-value (\\(x\\))\n\\(fx\\)\n\\(cf\\)\n\n\n\n\n10–15\n12\n12.5\n150\n12\n\n\n15–20\n19\n17.5\n332.5\n31\n\n\n20–25\n26\n22.5\n585\n57\n\n\n25–30\n21\n27.5\n577.5\n78\n\n\n30–35\n15\n32.5\n487.5\n93\n\n\n35–40\n9\n37.5\n337.5\n102\n\n\nTotal\n\\(N=102\\)\n\n\\(\\sum fx = 2470\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Central Tendency</span>"
+    ]
+  },
+  {
+    "objectID": "summary.html",
+    "href": "summary.html",
+    "title": "4  Summary",
+    "section": "",
+    "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
+    ]
+  }
+]
