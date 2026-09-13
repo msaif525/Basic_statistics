@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Mohammad Saifuddin">
-<meta name="dcterms.date" content="2026-09-13">
 
-<title>Basic Statistics</title>
+<title>2&nbsp; Introduction to Central Tendency – Basic Statistics</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./intro.html" rel="next">
+<link href="./quantiles.html" rel="next">
+<link href="./intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -72,6 +71,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -84,7 +112,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Preface</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./central_tendency.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Central Tendency</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -111,7 +139,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Preface</span></a>
   </div>
 </li>
@@ -123,7 +151,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./central_tendency.html" class="sidebar-item-text sidebar-link">
+  <a href="./central_tendency.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Central Tendency</span></span></a>
   </div>
 </li>
@@ -155,7 +183,7 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
+  <li><a href="#common-measures-of-central-tendency" id="toc-common-measures-of-central-tendency" class="nav-link active" data-scroll-target="#common-measures-of-central-tendency"><span class="header-section-number">2.1</span> Common Measures of Central Tendency</a></li>
   </ul>
 </nav>
     </div>
@@ -164,26 +192,14 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Basic Statistics</h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Introduction to Central Tendency</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Mohammad Saifuddin </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">September 13, 2026</p>
-    </div>
-  </div>
   
     
   </div>
@@ -193,8 +209,181 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="preface" class="level1 unnumbered">
-<h1 class="unnumbered">Preface</h1>
+<p><strong>Central tendency</strong> is a statistical concept used to describe the <strong>center</strong> or <strong>typical value</strong> of a dataset.</p>
+<p>Instead of looking at every individual data point, measures of central tendency provide a single summary value that represents the entire distribution.</p>
+<p>The three most common measures are the <strong>mean, median</strong>, and <strong>mode</strong>, each offering a different perspective on what constitutes the “center” of the data depending on its distribution and the presence of outliers.</p>
+<section id="common-measures-of-central-tendency" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="common-measures-of-central-tendency"><span class="header-section-number">2.1</span> Common Measures of Central Tendency</h2>
+<ol type="1">
+<li>Mean / Average / Arithmetic mean</li>
+<li>Median</li>
+<li>Mode</li>
+</ol>
+<p><strong>Case I: Formula for Ungrouped / Raw Data</strong></p>
+<p>Consider a variable <span class="math inline">\(X\)</span> with “<span class="math inline">\(n\)</span>” observations that is: <span class="math display">\[X = \{x_1, x_2, \dots, x_n\}\]</span></p>
+<p><strong>A. Mean of</strong> <span class="math inline">\(X\)</span>: <span class="math display">\[\bar{X} = \frac{x_1 + x_2 + \cdots + x_n}{n} = \frac{\sum x}{n}\]</span></p>
+<p><strong>B. Median:</strong> Middle most observation of an arranged data.</p>
+<p><strong>C. Mode:</strong> Most frequent observation(s) in a data.</p>
+<p><strong>Example-1</strong></p>
+<p>Ten-count tests made on certain yarn have shown the following results: 22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 23.1, 23.0, 22.9, 23.0</p>
+<p>Compute mean, median and mode of the above data:</p>
+<p><strong>Solution:</strong> <span class="math display">\[n = 10; \sum x = 22.8 + 23.2 + \dots + 23.0 = 229.9\]</span></p>
+<p><strong>A) Mean:</strong> <span class="math display">\[\text{Mean} = \frac{\sum x}{n} = \frac{229.9}{10} = 22.99\]</span></p>
+<p><strong>B) Median:</strong> Arranged <span class="math inline">\(X\)</span>: 22.6, 22.8, 22.9, 22.9, 23.0, 23.0, 23.0, 23.1, 23.2, 23.4 <span class="math display">\[\text{Median} = \frac{23.0 + 23.0}{2} = 23.0\]</span></p>
+<p><strong>C) Mode:</strong> <span class="math display">\[\text{Mode} = 23.0 \text{ (observed 3 times uniquely)}\]</span></p>
+<hr>
+<p><strong>Case II: Formula for Grouped / Frequency Distribution</strong></p>
+<p>Consider the following frequency distribution:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Class interval</th>
+<th style="text-align: left;">Mid value (<span class="math inline">\(x_i\)</span>)</th>
+<th style="text-align: left;">Frequency (<span class="math inline">\(f_i\)</span>)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><span class="math inline">\([L_1, L_2)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_1 = (L_1+L_2)/2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f_1\)</span></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\([L_2, L_3)\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_2\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f_2\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">…</td>
+<td style="text-align: left;">…</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;"><span class="math inline">\([L_k, L_{k+1})\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(x_k\)</span></td>
+<td style="text-align: left;"><span class="math inline">\(f_k\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(N = \sum_{i=1}^{k} f_i\)</span></td>
+</tr>
+</tbody>
+</table>
+<p><strong>A) Mean:</strong></p>
+<p><span class="math display">\[\text{Mean} = \frac{f_1 x_1 + f_2 x_2 + \cdots + f_k x_k}{f_1 + f_2 + \cdots + f_k} = \frac{\sum_{i=1}^{k} f_i x_i}{N} = \frac{\sum fx}{N}\]</span></p>
+<p><strong>B) Median:</strong></p>
+<p><span class="math display">\[\text{Median} = L_o + \frac{c}{f} \left(\frac{N}{2} - p.cf\right)\]</span></p>
+<p><em>Where:</em></p>
+<p><span class="math inline">\(L_o\)</span> = Lower limit of Median class</p>
+<p><span class="math inline">\(c\)</span> = class interval of Median class</p>
+<p><span class="math inline">\(f\)</span> = frequency of Median class</p>
+<p><span class="math inline">\(p.cf\)</span> = cf (cumulative frequency of pre median class)</p>
+<p><strong>C) Mode:</strong> [For approximately symmetric distribution] <span class="math display">\[\text{Mode} = L_o + \frac{\Delta_1}{\Delta_1 + \Delta_2} \times c\]</span> <em>Where:</em></p>
+<p><span class="math inline">\(L_o\)</span> = Lower limit of Modal class</p>
+<p><span class="math inline">\(c\)</span> = class interval of Modal class</p>
+<p><span class="math inline">\(\Delta_1\)</span> = differences between frequencies of pre modal and modal class</p>
+<p><span class="math inline">\(\Delta_2\)</span> = differences between frequencies of post modal and modal class</p>
+<p><strong>Example-2</strong> Determine the mean, median and mode from the following frequency distribution and comment on it.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Length of fiber(mm)</th>
+<th style="text-align: left;">10–15</th>
+<th style="text-align: left;">15–20</th>
+<th style="text-align: left;">20–25</th>
+<th style="text-align: left;">25–30</th>
+<th style="text-align: left;">30–35</th>
+<th style="text-align: left;">35–40</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;"><strong>No.&nbsp;of fibers</strong></td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">9</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Solution:</strong></p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 29%">
+<col style="width: 12%">
+<col style="width: 23%">
+<col style="width: 25%">
+<col style="width: 8%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Length of fiber(mm)</th>
+<th style="text-align: left;"><span class="math inline">\(f\)</span></th>
+<th style="text-align: left;">Mid-value (<span class="math inline">\(x\)</span>)</th>
+<th style="text-align: left;"><span class="math inline">\(fx\)</span></th>
+<th style="text-align: left;"><span class="math inline">\(cf\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">10–15</td>
+<td style="text-align: left;">12</td>
+<td style="text-align: left;">12.5</td>
+<td style="text-align: left;">150</td>
+<td style="text-align: left;">12</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">15–20</td>
+<td style="text-align: left;">19</td>
+<td style="text-align: left;">17.5</td>
+<td style="text-align: left;">332.5</td>
+<td style="text-align: left;">31</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">20–25</td>
+<td style="text-align: left;">26</td>
+<td style="text-align: left;">22.5</td>
+<td style="text-align: left;">585</td>
+<td style="text-align: left;">57</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">25–30</td>
+<td style="text-align: left;">21</td>
+<td style="text-align: left;">27.5</td>
+<td style="text-align: left;">577.5</td>
+<td style="text-align: left;">78</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">30–35</td>
+<td style="text-align: left;">15</td>
+<td style="text-align: left;">32.5</td>
+<td style="text-align: left;">487.5</td>
+<td style="text-align: left;">93</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">35–40</td>
+<td style="text-align: left;">9</td>
+<td style="text-align: left;">37.5</td>
+<td style="text-align: left;">337.5</td>
+<td style="text-align: left;">102</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;"><strong>Total</strong></td>
+<td style="text-align: left;"><span class="math inline">\(N=102\)</span></td>
+<td style="text-align: left;"></td>
+<td style="text-align: left;"><span class="math inline">\(\sum fx = 2470\)</span></td>
+<td style="text-align: left;"></td>
+</tr>
+</tbody>
+</table>
+<p><strong>A) Mean:</strong> <span class="math display">\[\text{Mean} = \frac{\sum fx}{N} = \frac{2470}{102} = 24.22\]</span></p>
+<p><strong>B) Median:</strong> To determine median we have to identify the “Median” class. First calculate cumulative frequency (<span class="math inline">\(cf\)</span>). Then, calculate: <span class="math display">\[\frac{N}{2} = \frac{102}{2} = 51\]</span> This is less than the <span class="math inline">\(cf=57\)</span> which corresponds to class interval 20-25.</p>
+<p><span class="math display">\[\text{Median} = L_o + \frac{c}{f} \left(\frac{N}{2} - p.cf\right) = 20 + \frac{5}{26} (51 - 31) = 23.85\]</span></p>
+<p><strong>C) Mode:</strong> Here the highest frequency is <span class="math inline">\(f=26\)</span>, located in the class interval 20-25. So, 20-25 is the modal class. <span class="math display">\[\Delta_1 = 26 - 19 = 7; \quad \Delta_2 = 26 - 21 = 5\]</span></p>
+<p><span class="math display">\[\text{Mode} = L_o + \frac{\Delta_1}{\Delta_1 + \Delta_2} \times c = 20 + \frac{7}{7+5} \times 5 = 22.92\]</span></p>
 
 
 </section>
@@ -602,10 +791,13 @@ ul.task-list li input[type="checkbox"] {
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction to Statistics">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Statistics</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction to Statistics">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introduction to Statistics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./quantiles.html" class="pagination-link" aria-label="Partition values (quantiles)">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Partition values (quantiles)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

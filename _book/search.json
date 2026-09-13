@@ -2,9 +2,9 @@
   {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "Basic_statistics",
+    "title": "Basic Statistics",
     "section": "",
-    "text": "Preface\nThis is a Quarto book.\nTo learn more about Quarto books visit https://quarto.org/docs/books.\n\n1 + 1\n\n[1] 2",
+    "text": "Preface",
     "crumbs": [
       "Preface"
     ]
@@ -120,13 +120,33 @@
     ]
   },
   {
+    "objectID": "central_tendency.html",
+    "href": "central_tendency.html",
+    "title": "2  Introduction to Central Tendency",
+    "section": "",
+    "text": "2.1 Common Measures of Central Tendency\nCentral tendency is a statistical concept used to describe the center or typical value of a dataset.\nInstead of looking at every individual data point, measures of central tendency provide a single summary value that represents the entire distribution.\nThe three most common measures are the mean, median, and mode, each offering a different perspective on what constitutes the “center” of the data depending on its distribution and the presence of outliers.\nCase I: Formula for Ungrouped / Raw Data\nConsider a variable \\(X\\) with “\\(n\\)” observations that is: \\[X = \\{x_1, x_2, \\dots, x_n\\}\\]\nA. Mean of \\(X\\): \\[\\bar{X} = \\frac{x_1 + x_2 + \\cdots + x_n}{n} = \\frac{\\sum x}{n}\\]\nB. Median: Middle most observation of an arranged data.\nC. Mode: Most frequent observation(s) in a data.\nExample-1\nTen-count tests made on certain yarn have shown the following results: 22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 23.1, 23.0, 22.9, 23.0\nCompute mean, median and mode of the above data:\nSolution: \\[n = 10; \\sum x = 22.8 + 23.2 + \\dots + 23.0 = 229.9\\]\nA) Mean: \\[\\text{Mean} = \\frac{\\sum x}{n} = \\frac{229.9}{10} = 22.99\\]\nB) Median: Arranged \\(X\\): 22.6, 22.8, 22.9, 22.9, 23.0, 23.0, 23.0, 23.1, 23.2, 23.4 \\[\\text{Median} = \\frac{23.0 + 23.0}{2} = 23.0\\]\nC) Mode: \\[\\text{Mode} = 23.0 \\text{ (observed 3 times uniquely)}\\]\nCase II: Formula for Grouped / Frequency Distribution\nConsider the following frequency distribution:\nA) Mean:\n\\[\\text{Mean} = \\frac{f_1 x_1 + f_2 x_2 + \\cdots + f_k x_k}{f_1 + f_2 + \\cdots + f_k} = \\frac{\\sum_{i=1}^{k} f_i x_i}{N} = \\frac{\\sum fx}{N}\\]\nB) Median:\n\\[\\text{Median} = L_o + \\frac{c}{f} \\left(\\frac{N}{2} - p.cf\\right)\\]\nWhere:\n\\(L_o\\) = Lower limit of Median class\n\\(c\\) = class interval of Median class\n\\(f\\) = frequency of Median class\n\\(p.cf\\) = cf (cumulative frequency of pre median class)\nC) Mode: [For approximately symmetric distribution] \\[\\text{Mode} = L_o + \\frac{\\Delta_1}{\\Delta_1 + \\Delta_2} \\times c\\] Where:\n\\(L_o\\) = Lower limit of Modal class\n\\(c\\) = class interval of Modal class\n\\(\\Delta_1\\) = differences between frequencies of pre modal and modal class\n\\(\\Delta_2\\) = differences between frequencies of post modal and modal class\nExample-2 Determine the mean, median and mode from the following frequency distribution and comment on it.\nSolution:\nA) Mean: \\[\\text{Mean} = \\frac{\\sum fx}{N} = \\frac{2470}{102} = 24.22\\]\nB) Median: To determine median we have to identify the “Median” class. First calculate cumulative frequency (\\(cf\\)). Then, calculate: \\[\\frac{N}{2} = \\frac{102}{2} = 51\\] This is less than the \\(cf=57\\) which corresponds to class interval 20-25.\n\\[\\text{Median} = L_o + \\frac{c}{f} \\left(\\frac{N}{2} - p.cf\\right) = 20 + \\frac{5}{26} (51 - 31) = 23.85\\]\nC) Mode: Here the highest frequency is \\(f=26\\), located in the class interval 20-25. So, 20-25 is the modal class. \\[\\Delta_1 = 26 - 19 = 7; \\quad \\Delta_2 = 26 - 21 = 5\\]\n\\[\\text{Mode} = L_o + \\frac{\\Delta_1}{\\Delta_1 + \\Delta_2} \\times c = 20 + \\frac{7}{7+5} \\times 5 = 22.92\\]",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Central Tendency</span>"
+    ]
+  },
+  {
+    "objectID": "central_tendency.html#common-measures-of-central-tendency",
+    "href": "central_tendency.html#common-measures-of-central-tendency",
+    "title": "2  Introduction to Central Tendency",
+    "section": "",
+    "text": "Mean / Average / Arithmetic mean\nMedian\nMode\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nClass interval\nMid value (\\(x_i\\))\nFrequency (\\(f_i\\))\n\n\n\n\n\\([L_1, L_2)\\)\n\\(x_1 = (L_1+L_2)/2\\)\n\\(f_1\\)\n\n\n\\([L_2, L_3)\\)\n\\(x_2\\)\n\\(f_2\\)\n\n\n…\n…\n…\n\n\n\\([L_k, L_{k+1})\\)\n\\(x_k\\)\n\\(f_k\\)\n\n\nTotal\n\n\\(N = \\sum_{i=1}^{k} f_i\\)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLength of fiber(mm)\n10–15\n15–20\n20–25\n25–30\n30–35\n35–40\n\n\n\n\nNo. of fibers\n12\n19\n26\n21\n15\n9\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nLength of fiber(mm)\n\\(f\\)\nMid-value (\\(x\\))\n\\(fx\\)\n\\(cf\\)\n\n\n\n\n10–15\n12\n12.5\n150\n12\n\n\n15–20\n19\n17.5\n332.5\n31\n\n\n20–25\n26\n22.5\n585\n57\n\n\n25–30\n21\n27.5\n577.5\n78\n\n\n30–35\n15\n32.5\n487.5\n93\n\n\n35–40\n9\n37.5\n337.5\n102\n\n\nTotal\n\\(N=102\\)\n\n\\(\\sum fx = 2470\\)",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Introduction to Central Tendency</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
-    "title": "2  Summary",
+    "title": "4  Summary",
     "section": "",
     "text": "In summary, this book has no content whatsoever.\n\n1 + 1\n\n[1] 2",
     "crumbs": [
-      "<span class='chapter-number'>2</span>  <span class='chapter-title'>Summary</span>"
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>Summary</span>"
     ]
   }
 ]

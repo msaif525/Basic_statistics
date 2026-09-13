@@ -94,7 +94,7 @@ medical_df <- data.frame( ID = c(132414, 454543, 232134, 314132, 453255, 543545,
 knitr::kable(medical_df, caption = "Typical Rectangular Data Set")
 ```
 
-# 2.Frequency distribution
+# Frequency distribution
 
 **1) Ungrouped (discrete)** - Usually used to understand the distribution of count data
 
@@ -162,6 +162,86 @@ Hence in exclusive method; required classes are: \[6.0,6.20), \[6.20, 6.40), \[6
 *Histogram of ‘hairiness index’ data:*
 
 ![](images/clipboard-971494008.png){width="586"}
+
+
+
+**Histogram and shape of distribution**
+
+```{r echo=FALSE, fig.height=4, fig.width=10}
+# Set up a multi-panel plot: 1 row, 3 columns
+par(mfrow = c(1, 3))
+
+# 1. Positively Skewed Distribution
+# Generate data using Gamma distribution which is naturally positively skewed
+# We generate a dataset of 1000 points.
+set.seed(123) # for reproducibility
+data_pos <- rgamma(1000, shape = 3, scale = 2)
+
+# Create the histogram
+hist(data_pos,
+     breaks = 20,           # Set the number of bins
+     probability = TRUE,    # Plot density, not counts
+     col = "lightblue",    # Bar color
+     border = "white",     # Border color
+     main = "Positively Skewed", # Title
+     xlab = "Values",       # X-axis label
+     ylab = "Density"       # Y-axis label
+)
+
+# Add a density line for emphasis
+lines(density(data_pos), col = "red", lwd = 2)
+
+
+# 2. Bell-Shaped (Symmetric) Distribution
+# Generate data using Normal (Gaussian) distribution
+# 1000 points with mean 10 and standard deviation 2.
+data_normal <- rnorm(1000, mean = 10, sd = 2)
+
+# Create the histogram
+hist(data_normal,
+     breaks = 20,
+     probability = TRUE,
+     col = "lightgreen",
+     border = "white",
+     main = "Bell-Shaped (Normal)",
+     xlab = "Values",
+     ylab = "Density"
+)
+
+# Add a density line
+lines(density(data_normal), col = "red", lwd = 2)
+
+
+# 3. Negatively Skewed Distribution
+# Approach: Create a negatively skewed dataset by transforming a positively skewed one.
+# Generate another Gamma dataset.
+data_pos_temp <- rgamma(1000, shape = 3, scale = 2)
+
+# "Flip" the data across the x-axis, then shift it.
+# This results in a distribution with a tail extending to the left (negative skew).
+# We choose values to keep the resulting data positive for the plot.
+data_neg <- (max(data_pos_temp) + 2) - data_pos_temp
+
+# Create the histogram
+hist(data_neg,
+     breaks = 20,
+     probability = TRUE,
+     col = "salmon",
+     border = "white",
+     main = "Negatively Skewed",
+     xlab = "Values",
+     ylab = "Density"
+)
+
+# Add a density line
+lines(density(data_neg), col = "red", lwd = 2)
+
+# Restore default plotting parameters (1x1 layout)
+par(mfrow = c(1, 1))
+```
+
+
+
 
 **Relative, percent and cumulative frequency distribution- example with the ‘hairiness index’ data**
 
