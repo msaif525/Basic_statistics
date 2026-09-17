@@ -1,5 +1,3 @@
-
-
 # Introduction to Statistics
 
 - **Data:** Data consists of information coming from observations, counts, measurements, or responses. *(Ron Larson)*
@@ -163,8 +161,6 @@ Hence in exclusive method; required classes are: \[6.0,6.20), \[6.20, 6.40), \[6
 
 ![](images/clipboard-971494008.png){width="586"}
 
-
-
 **Histogram and shape of distribution**
 
 ```{r echo=FALSE, fig.height=4, fig.width=10}
@@ -240,13 +236,10 @@ lines(density(data_neg), col = "red", lwd = 2)
 par(mfrow = c(1, 1))
 ```
 
-
-
-
 **Relative, percent and cumulative frequency distribution- example with the ‘hairiness index’ data**
 
 | Class interval | Frequency | Relative frequency (rf) | Percent frequency(pf) | Cumulative frequency (cf) |
-|---------------|---------------|---------------|---------------|---------------|
+|----|----|----|----|----|
 | \[6.0,6.20) | 2 | 0.10 | 10 | 2 |
 | \[6.20,6.40) | 3 | 0.15 | 15 | 5 |
 | \[6.40,6.60) | 4 | 0.20 | 20 | 9 |
