@@ -6,7 +6,7 @@ book:
   author: "Mohammad Saifuddin"
   date: today
   downloads: [pdf, epub]
-  #repo-url: https://github.com/msaif525/stat_for_businessNeconomics   
+  repo-url: https://msaif525.github.io/Basic_statistics
   search: 
     location: sidebar
     type: textbox   
