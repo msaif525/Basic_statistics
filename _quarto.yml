@@ -13,15 +13,54 @@ book:
     - summary.qmd
     - references.qmd
 
+downloads: [pdf, epub]
+  sidebar:
+    pinned: true
+    tools:
+      - icon: save
+        menu:
+          - text: ""
+            url:  "#"
+          - text: ""
+            url:  "#"
+          - text: ""
+            url:  "#"
+            
+  repo-url: https://github.com/msaif525/stat_for_businessNeconomics   
+  search: 
+    location: sidebar
+    type: textbox    
+
+execute: 
+  echo: false
+  warning: false
+
 bibliography: references.bib
+
 
 format:
   html:
-    theme:
-      - cosmo
-      - brand
+    grid:
+      margin-width: 300px
+      body-width: 900px
+      sidebar-width: 300px
+      gutter-width: 1.5rem
+    theme: cosmo
+    code-fold: true
   pdf:
     documentclass: scrreprt
-
+    include-in-header: footer.tex
+    geometry:
+      - top=20mm
+      - bottom=25mm
+      - left=25mm
+      - right=25mm
+      - heightrounded
+    toc: true
+    toc-depth: 2
+    colorlinks: true
+    fontsize: 11pt
+    #include-before-body: cover.tex
+  
+css: styles.css
 editor: visual
-
