@@ -26,6 +26,14 @@ book:
     - intro.qmd
     - central_tendency.qmd
     - quantiles.qmd
+    - dispersion.qmd
+    - shape.qmd
+    - correlation.qmd
+    - regression.qmd
+    - probability.qmd
+    - discrete_rv.qmd
+    - continuous_rv.qmd
+    - sqc.qmd
     - summary.qmd
     - references.qmd
 
