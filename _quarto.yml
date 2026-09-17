@@ -5,15 +5,11 @@ book:
   title: "Basic Statistics"
   author: "Mohammad Saifuddin"
   date: today
-  chapters:
-    - index.qmd
-    - intro.qmd
-    - central_tendency.qmd
-    - quantiles.qmd
-    - summary.qmd
-    - references.qmd
-
-downloads: [pdf, epub]
+  downloads: [pdf, epub]
+  #repo-url: https://github.com/msaif525/stat_for_businessNeconomics   
+  search: 
+    location: sidebar
+    type: textbox   
   sidebar:
     pinned: true
     tools:
@@ -25,18 +21,19 @@ downloads: [pdf, epub]
             url:  "#"
           - text: ""
             url:  "#"
-            
-  repo-url: https://github.com/msaif525/stat_for_businessNeconomics   
-  search: 
-    location: sidebar
-    type: textbox    
+  chapters:
+    - index.qmd
+    - intro.qmd
+    - central_tendency.qmd
+    - quantiles.qmd
+    - summary.qmd
+    - references.qmd
 
 execute: 
   echo: false
   warning: false
 
 bibliography: references.bib
-
 
 format:
   html:
