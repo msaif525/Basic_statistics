@@ -126,40 +126,77 @@ So, the frequency table/distribution of number of weaving defects is:
 |       5        |  3   |
 |       6        |  2   |
 
-**Example-2:** Following are the results of ‘hairiness index’ obtained from 20 tests: 6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62. Construct the grouped frequency distribution by taking suitable/ appropriate class interval in exclusive method.
+**Example-2:** Following are the results of ‘hairiness index’ obtained from 20 tests:
 
-**Solution:** Here, Minimum=6.0; Maximum=7.2 ; Range, R= Maximum- Minimum=7.2-6.0=1.2; n = 20
+6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62.
 
-So, class interval, c = $$c = \frac{R}{(1+3.32*\log_{10} n)} = \frac{1.2}{(1+3.32*\log_{10} 20)} = 0.23 \approx 0.20$$
+**Construct** the grouped frequency distribution by taking suitable/ appropriate class interval in exclusive method.
 
-Hence in exclusive method; required classes are: \[6.0,6.20), \[6.20, 6.40), \[6.40,6.60), \[6.60,6.80), \[6.80,7.00), \[7.00, 7.20), \[7.20, 7.40)
+**Solution:**
+
+Here, Minimum=6.0; Maximum=7.2 ; Range, R= Maximum- Minimum=7.2-6.0=1.2; n = 20
+
+- Number of classes ,
+
+$$k=\sqrt n =\sqrt 20=4.47\approx 5$$
+
+- So, class interval/ width , $$w = \frac{R}{k} = \frac{1.2}{5} = 0.24 \approx 0.25$$
+
+Hence in exclusive method; required class limits are: \[6.0,6.25), \[6.25, 6.50), \[6.50,6.75), \[6.75,7.00), \[7.00,7.25).
 
 **Frequency distribution of hairiness index (n=20):**
 
 | Class interval | Tally | Frequency |
 |----------------|-------|-----------|
-| \[6.0,6.20)    |       |           |
-| \[6.20, 6.40)  |       |           |
-| \[6.40,6.60)   |       |           |
-| \[6.60,6.80)   |       |           |
-| \[6.80,7.00)   |       |           |
-| \[7.00, 7.20)  |       |           |
-| \[7.20, 7.40)  |       |           |
+| \[6.00,6.25)   |       |           |
+| \[6.25, 6.50)  |       |           |
+| \[6.50,6.75)   |       |           |
+| \[6.75,7.00)   |       |           |
+| \[7.00,7.25)   |       |           |
 | **Total**      |       |           |
 
-| Class interval | Freq |
-|:--------------:|:----:|
-|    \[6,6.2)    |  2   |
-|   \[6.2,6.4)   |  3   |
-|   \[6.4,6.6)   |  4   |
-|   \[6.6,6.8)   |  5   |
-|    \[6.8,7)    |  4   |
-|    \[7,7.2)    |  1   |
-|   \[7.2,7.4)   |  1   |
+**Ans.**
+
+```{r}
+histo<-c(6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62)
+
+breaks <- seq(6, 7.25, by = 0.25)
+
+freq_table <- table(
+  cut(histo,
+      breaks = breaks,
+      right = FALSE,
+      include.lowest = TRUE)
+)
+
+#freq_table
+
+```
+
+| Class interval | Frequency |
+|----------------|:---------:|
+| \[6.00,6.25)   |     2     |
+| \[6.25, 6.50)  |     4     |
+| \[6.50,6.75)   |     6     |
+| \[6.75,7.00)   |     6     |
+| \[7.00,7.25)   |     2     |
+| **Total**      |  $n=20$   |
 
 *Histogram of ‘hairiness index’ data:*
 
-![](images/clipboard-971494008.png){width="586"}
+```{r}
+h <- hist(histo,main = " ",xlab = "Hairiness index",
+          breaks = seq(6, 7.25, by = 0.25),
+          labels = TRUE,
+          right = FALSE,
+          include.lowest = TRUE,
+          col = "lightblue",
+          border = "black",
+          ylim = c(0,7),
+          xaxt = "n")   # suppress default x-axis
+
+axis(1, at = seq(6, 7.25, by = 0.25))
+```
 
 **Histogram and shape of distribution**
 
@@ -239,35 +276,53 @@ par(mfrow = c(1, 1))
 **Relative, percent and cumulative frequency distribution- example with the ‘hairiness index’ data**
 
 | Class interval | Frequency | Relative frequency (rf) | Percent frequency(pf) | Cumulative frequency (cf) |
-|----|----|----|----|----|
-| \[6.0,6.20) | 2 | 0.10 | 10 | 2 |
-| \[6.20,6.40) | 3 | 0.15 | 15 | 5 |
-| \[6.40,6.60) | 4 | 0.20 | 20 | 9 |
-| \[6.60,6.80) | 5 | 0.25 | 25 | 14 |
-| \[6.80,7.00) | 4 | 0.20 | 20 | 18 |
-| \[7.00,7.20) | 1 | 0.05 | 5 | 19 |
-| \[7.20,7.40) | 1 | 0.05 | 5 | 20 |
+|---------------|:-------------:|:-------------:|:-------------:|:-------------:|
+| \[6.00,6.25) | 2 | 0.10 | 10 | 2 |
+| \[6.25,6.50) | 4 | 0.20 | 20 | 6 |
+| \[6.50,6.75) | 6 | 0.30 | 30 | 12 |
+| \[6.75,7.00) | 6 | 0.30 | 30 | 18 |
+| \[7.00,7.25) | 2 | 0.10 | 10 | 20 |
 | **Total** | **20** | **1.00** | **100.00** |  |
 
 ## 2. Exercise
 
-1.  Construct the frequency distribution for the following data of number of weaving defects observed in the 30 pieces of fabric. 4, 0, 1, 5, 2, 6, 0, 4, 4, 1, 5, 4, 5, 4, 3, 0, 2, 3, 3, 2, 6, 4, 1, 2, 1, 3, 4, 3, 2, 3
+1.  **Construct** the frequency distribution for the following data of number of weaving defects observed in the 30 pieces of fabric. 4, 0, 1, 5, 2, 6, 0, 4, 4, 1, 5, 4, 5, 4, 3, 0, 2, 3, 3, 2, 6, 4, 1, 2, 1, 3, 4, 3, 2, 3
 
-2.  Construct the ungrouped frequency distribution for the following data of number of end breaks observed on a ring frame for the 30 days. 10, 8, 5, 10, 7, 7, 11, 8, 10, 12, 11, 12, 6, 6, 7, 10, 10, 12, 10, 10, 6, 7, 8, 10, 8, 8, 12, 11, 10, 10
+2.  **Construct** the *ungrouped* frequency distribution for the following data of number of end breaks observed on a ring frame for the 30 days.
 
-3.  Following are the figures of number of workers absent in a textile mill every day: 2, 3, 1, 1, 2, 3, 2, 0, 0, 1, 2, 5, 0, 0, 2,1, 1, 4, 3, 2, 0, 2, 1, 2, 2, 4, 3, 3, 3, 4 Construct the ungrouped frequency distribution for the above data.
+    10, 8, 5, 10, 7, 7, 11, 8, 10, 12, 11, 12, 6, 6, 7, 10, 10, 12, 10, 10, 6, 7, 8, 10, 8, 8, 12, 11, 10, 10.
 
-\*\*4. Following are the results of ‘hairiness index’ obtained from 20 tests: 6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62 Construct the grouped frequency distribution by taking classes 6.00–6.20, 6.20–6.40 and so on.
+3.  Following are the figures of number of workers absent in a textile mill every day:
 
-5.  Following are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.
+    2, 3, 1, 1, 2, 3, 2, 0, 0, 1, 2, 5, 0, 0, 2,1, 1, 4, 3, 2, 0, 2, 1, 2, 2, 4, 3, 3, 3, 4.
 
-\*\*5. Following are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.
+    **Construct** the ungrouped frequency distribution for the above data.
+
+\*\*4. Following are the results of ‘hairiness index’ obtained from 20 tests:
+
+6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62.
+
+**Construct** the grouped frequency distribution by taking classes 6.00–6.20, 6.20–6.40 and so on.
+
+5.  Following are the number of accidents per day observed in a textile mill during a month of 30 days:
+
+    4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2.
+
+    **Construct** an ungrouped frequency distribution.
 
 6.  Thirty pieces of fabric were observed for the number of defects and following results were obtained. 1, 0, 0, 2, 3, 2, 1, 1, 3, 2, 4, 3, 4, 1, 1, 2, 0, 0, 5, 2, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3 Construct an ungrouped frequency distribution.
 
-7.  Construct the frequency distribution for the following results of the daily sale (in 1000 Rs.) in a textile firm recorded for a month. 21, 21, 21, 22, 26, 20, 20, 20, 21, 21, 20, 20, 22, 20, 21, 23, 21, 22, 21, 25, 18, 24, 25, 19, 25, 18, 26, 23, 18, 24
+7.  **Construct** the frequency distribution for the following results of the daily sale (in 1000 Tk.) in a textile firm recorded for a month.
 
-\*\*8. Thirty linear density tests made on the yarn have shown following results. 14.8, 14.2, 13.8, 13.5, 14.0, 14.2, 14.3, 14.6, 13.9, 14.0, 14.1, 13.2, 13.0, 14.2, 13.5, 13.0, 12.8, 13.9, 14.8, 15.0, 12.8, 13.4, 13.2, 14.0, 13.8, 13.9, 14.0, 14.0, 13.9, 14.8 Construct the grouped frequency distribution by taking class intervals 12.6–13.0; 13.1–13.5 and so on.
+    21, 21, 21, 22, 26, 20, 20, 20, 21, 21, 20, 20, 22, 20, 21, 23, 21, 22, 21, 25, 18, 24, 25, 19, 25, 18, 26, 23, 18, 24.
+
+    Also **comment** about shape of the distribution of daily sales.
+
+\*\*8. Thirty linear density tests made on the yarn have shown following results.
+
+14.8, 14.2, 13.8, 13.5, 14.0, 14.2, 14.3, 14.6, 13.9, 14.0, 14.1, 13.2, 13.0, 14.2, 13.5, 13.0, 12.8, 13.9, 14.8, 15.0, 12.8, 13.4, 13.2, 14.0, 13.8, 13.9, 14.0, 14.0, 13.9, 14.8.
+
+**Construct** the grouped frequency distribution by taking class intervals 12.6–13.0; 13.1–13.5 and so on.
 
 9.  Following is the distribution of fabric samples according to the strength of fabric:
 
@@ -275,4 +330,4 @@ par(mfrow = c(1, 1))
 |--------------------|---------|---------|---------|---------|---------|
 | **No. of samples** | 8       | 12      | 17      | 10      | 7       |
 
-Draw the histogram for the above data and interpret it.
+**Draw** the histogram for the above data and interpret it.
