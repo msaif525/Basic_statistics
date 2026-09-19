@@ -284,7 +284,8 @@ window.Quarto = {
   <li><a href="#data-management-arrays" id="toc-data-management-arrays" class="nav-link" data-scroll-target="#data-management-arrays"><span class="header-section-number">1.9</span> Data Management &amp; Arrays</a></li>
   <li><a href="#frequency-distribution" id="toc-frequency-distribution" class="nav-link" data-scroll-target="#frequency-distribution"><span class="header-section-number">2</span> Frequency distribution</a>
   <ul class="collapse">
-  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2.1</span> 2. Exercise</a></li>
+  <li><a href="#histogram-and-shape-of-distribution" id="toc-histogram-and-shape-of-distribution" class="nav-link" data-scroll-target="#histogram-and-shape-of-distribution"><span class="header-section-number">2.1</span> <strong>Histogram and shape of distribution</strong></a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">2.2</span> Exercise</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -566,10 +567,19 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p><strong>Example-2:</strong> Following are the results of ‘hairiness index’ obtained from 20 tests: 6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62. Construct the grouped frequency distribution by taking suitable/ appropriate class interval in exclusive method.</p>
-<p><strong>Solution:</strong> Here, Minimum=6.0; Maximum=7.2 ; Range, R= Maximum- Minimum=7.2-6.0=1.2; n = 20</p>
-<p>So, class interval, c = <span class="math display">\[c = \frac{R}{(1+3.32*\log_{10} n)} = \frac{1.2}{(1+3.32*\log_{10} 20)} = 0.23 \approx 0.20\]</span></p>
-<p>Hence in exclusive method; required classes are: [6.0,6.20), [6.20, 6.40), [6.40,6.60), [6.60,6.80), [6.80,7.00), [7.00, 7.20), [7.20, 7.40)</p>
+<p><strong>Example-2:</strong> Following are the results of ‘hairiness index’ obtained from 20 tests:</p>
+<p>6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62.</p>
+<p><strong>Construct</strong> the grouped frequency distribution by taking suitable/ appropriate class interval in exclusive method.</p>
+<p><strong>Solution:</strong></p>
+<p>Here, Minimum=6.0; Maximum=7.2 ; Range, R= Maximum- Minimum=7.2-6.0=1.2; n = 20</p>
+<ul>
+<li>Number of classes ,</li>
+</ul>
+<p><span class="math display">\[k=\sqrt n =\sqrt 20=4.47\approx 5\]</span></p>
+<ul>
+<li>So, class interval/ width , <span class="math display">\[w = \frac{R}{k} = \frac{1.2}{5} = 0.24 \approx 0.25\]</span></li>
+</ul>
+<p>Hence in exclusive method; required class limits are: [6.0,6.25), [6.25, 6.50), [6.50,6.75), [6.75,7.00), [7.00,7.25).</p>
 <p><strong>Frequency distribution of hairiness index (n=20):</strong></p>
 <table class="caption-top table">
 <thead>
@@ -581,37 +591,27 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td>[6.0,6.20)</td>
+<td>[6.00,6.25)</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>[6.20, 6.40)</td>
+<td>[6.25, 6.50)</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>[6.40,6.60)</td>
+<td>[6.50,6.75)</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="even">
-<td>[6.60,6.80)</td>
+<td>[6.75,7.00)</td>
 <td></td>
 <td></td>
 </tr>
 <tr class="odd">
-<td>[6.80,7.00)</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="even">
-<td>[7.00, 7.20)</td>
-<td></td>
-<td></td>
-</tr>
-<tr class="odd">
-<td>[7.20, 7.40)</td>
+<td>[7.00,7.25)</td>
 <td></td>
 <td></td>
 </tr>
@@ -622,52 +622,58 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
+<p><strong>Ans.</strong></p>
 <table class="caption-top table">
 <thead>
 <tr class="header">
-<th style="text-align: center;">Class interval</th>
-<th style="text-align: center;">Freq</th>
+<th>Class interval</th>
+<th style="text-align: center;">Frequency</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td style="text-align: center;">[6,6.2)</td>
+<td>[6.00,6.25)</td>
 <td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">[6.2,6.4)</td>
-<td style="text-align: center;">3</td>
-</tr>
-<tr class="odd">
-<td style="text-align: center;">[6.4,6.6)</td>
+<td>[6.25, 6.50)</td>
 <td style="text-align: center;">4</td>
 </tr>
-<tr class="even">
-<td style="text-align: center;">[6.6,6.8)</td>
-<td style="text-align: center;">5</td>
-</tr>
 <tr class="odd">
-<td style="text-align: center;">[6.8,7)</td>
-<td style="text-align: center;">4</td>
+<td>[6.50,6.75)</td>
+<td style="text-align: center;">6</td>
 </tr>
 <tr class="even">
-<td style="text-align: center;">[7,7.2)</td>
-<td style="text-align: center;">1</td>
+<td>[6.75,7.00)</td>
+<td style="text-align: center;">6</td>
 </tr>
 <tr class="odd">
-<td style="text-align: center;">[7.2,7.4)</td>
-<td style="text-align: center;">1</td>
+<td>[7.00,7.25)</td>
+<td style="text-align: center;">2</td>
+</tr>
+<tr class="even">
+<td><strong>Total</strong></td>
+<td style="text-align: center;"><span class="math inline">\(n=20\)</span></td>
 </tr>
 </tbody>
 </table>
 <p><em>Histogram of ‘hairiness index’ data:</em></p>
-<p><img src="images/clipboard-971494008.png" class="img-fluid" width="586"></p>
-<p><strong>Histogram and shape of distribution</strong></p>
 <div class="cell">
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="intro_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid figure-img" width="960"></p>
+<p><img src="intro_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<section id="histogram-and-shape-of-distribution" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="histogram-and-shape-of-distribution"><span class="header-section-number">2.1</span> <strong>Histogram and shape of distribution</strong></h2>
+<div class="cell">
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="intro_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="960"></p>
 </figure>
 </div>
 </div>
@@ -684,88 +690,83 @@ window.Quarto = {
 <thead>
 <tr class="header">
 <th>Class interval</th>
-<th>Frequency</th>
-<th>Relative frequency (rf)</th>
-<th>Percent frequency(pf)</th>
-<th>Cumulative frequency (cf)</th>
+<th style="text-align: center;">Frequency</th>
+<th style="text-align: center;">Relative frequency (rf)</th>
+<th style="text-align: center;">Percent frequency(pf)</th>
+<th style="text-align: center;">Cumulative frequency (cf)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>[6.0,6.20)</td>
-<td>2</td>
-<td>0.10</td>
-<td>10</td>
-<td>2</td>
+<td>[6.00,6.25)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">2</td>
 </tr>
 <tr class="even">
-<td>[6.20,6.40)</td>
-<td>3</td>
-<td>0.15</td>
-<td>15</td>
-<td>5</td>
+<td>[6.25,6.50)</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">0.20</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;">6</td>
 </tr>
 <tr class="odd">
-<td>[6.40,6.60)</td>
-<td>4</td>
-<td>0.20</td>
-<td>20</td>
-<td>9</td>
+<td>[6.50,6.75)</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">12</td>
 </tr>
 <tr class="even">
-<td>[6.60,6.80)</td>
-<td>5</td>
-<td>0.25</td>
-<td>25</td>
-<td>14</td>
+<td>[6.75,7.00)</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">0.30</td>
+<td style="text-align: center;">30</td>
+<td style="text-align: center;">18</td>
 </tr>
 <tr class="odd">
-<td>[6.80,7.00)</td>
-<td>4</td>
-<td>0.20</td>
-<td>20</td>
-<td>18</td>
-</tr>
-<tr class="even">
-<td>[7.00,7.20)</td>
-<td>1</td>
-<td>0.05</td>
-<td>5</td>
-<td>19</td>
-</tr>
-<tr class="odd">
-<td>[7.20,7.40)</td>
-<td>1</td>
-<td>0.05</td>
-<td>5</td>
-<td>20</td>
+<td>[7.00,7.25)</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">0.10</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;">20</td>
 </tr>
 <tr class="even">
 <td><strong>Total</strong></td>
-<td><strong>20</strong></td>
-<td><strong>1.00</strong></td>
-<td><strong>100.00</strong></td>
-<td></td>
+<td style="text-align: center;"><strong>20</strong></td>
+<td style="text-align: center;"><strong>1.00</strong></td>
+<td style="text-align: center;"><strong>100.00</strong></td>
+<td style="text-align: center;"></td>
 </tr>
 </tbody>
 </table>
-<section id="exercise" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2.1</span> 2. Exercise</h2>
+</section>
+<section id="exercise" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="exercise"><span class="header-section-number">2.2</span> Exercise</h2>
 <ol type="1">
-<li><p>Construct the frequency distribution for the following data of number of weaving defects observed in the 30 pieces of fabric. 4, 0, 1, 5, 2, 6, 0, 4, 4, 1, 5, 4, 5, 4, 3, 0, 2, 3, 3, 2, 6, 4, 1, 2, 1, 3, 4, 3, 2, 3</p></li>
-<li><p>Construct the ungrouped frequency distribution for the following data of number of end breaks observed on a ring frame for the 30 days. 10, 8, 5, 10, 7, 7, 11, 8, 10, 12, 11, 12, 6, 6, 7, 10, 10, 12, 10, 10, 6, 7, 8, 10, 8, 8, 12, 11, 10, 10</p></li>
-<li><p>Following are the figures of number of workers absent in a textile mill every day: 2, 3, 1, 1, 2, 3, 2, 0, 0, 1, 2, 5, 0, 0, 2,1, 1, 4, 3, 2, 0, 2, 1, 2, 2, 4, 3, 3, 3, 4 Construct the ungrouped frequency distribution for the above data.</p></li>
+<li><p><strong>Construct</strong> the frequency distribution for the following data of number of weaving defects observed in the 30 pieces of fabric. 4, 0, 1, 5, 2, 6, 0, 4, 4, 1, 5, 4, 5, 4, 3, 0, 2, 3, 3, 2, 6, 4, 1, 2, 1, 3, 4, 3, 2, 3</p></li>
+<li><p><strong>Construct</strong> the <em>ungrouped</em> frequency distribution for the following data of number of end breaks observed on a ring frame for the 30 days.</p>
+<p>10, 8, 5, 10, 7, 7, 11, 8, 10, 12, 11, 12, 6, 6, 7, 10, 10, 12, 10, 10, 6, 7, 8, 10, 8, 8, 12, 11, 10, 10.</p></li>
+<li><p>Following are the figures of number of workers absent in a textile mill every day:</p>
+<p>2, 3, 1, 1, 2, 3, 2, 0, 0, 1, 2, 5, 0, 0, 2,1, 1, 4, 3, 2, 0, 2, 1, 2, 2, 4, 3, 3, 3, 4.</p>
+<p><strong>Construct</strong> the ungrouped frequency distribution for the above data.</p></li>
 </ol>
-<p>**4. Following are the results of ‘hairiness index’ obtained from 20 tests: 6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62 Construct the grouped frequency distribution by taking classes 6.00–6.20, 6.20–6.40 and so on.</p>
+<p>**4. Following are the results of ‘hairiness index’ obtained from 20 tests:</p>
+<p>6.72, 6.52, 6.00, 6.85, 6.08, 6.64, 6.88, 6.91, 6.35, 6.52, 6.26, 7.20, 7.12, 6.36, 6.82, 6.53, 6.78, 6.75, 6.49, 6.62.</p>
+<p><strong>Construct</strong> the grouped frequency distribution by taking classes 6.00–6.20, 6.20–6.40 and so on.</p>
 <ol start="5" type="1">
-<li>Following are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.</li>
-</ol>
-<p>**5. Following are the number of accidents per day observed in a textile mill during a month of 30 days: 4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2. Construct an ungrouped frequency distribution.</p>
-<ol start="6" type="1">
+<li><p>Following are the number of accidents per day observed in a textile mill during a month of 30 days:</p>
+<p>4, 3, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3, 4, 1, 1, 2, 0, 0, 5, 2, 1, 0, 0, 2, 3, 2, 1, 1, 3, 2.</p>
+<p><strong>Construct</strong> an ungrouped frequency distribution.</p></li>
 <li><p>Thirty pieces of fabric were observed for the number of defects and following results were obtained. 1, 0, 0, 2, 3, 2, 1, 1, 3, 2, 4, 3, 4, 1, 1, 2, 0, 0, 5, 2, 3, 3, 4, 2, 2, 1, 2, 0, 2, 3 Construct an ungrouped frequency distribution.</p></li>
-<li><p>Construct the frequency distribution for the following results of the daily sale (in 1000 Rs.) in a textile firm recorded for a month. 21, 21, 21, 22, 26, 20, 20, 20, 21, 21, 20, 20, 22, 20, 21, 23, 21, 22, 21, 25, 18, 24, 25, 19, 25, 18, 26, 23, 18, 24</p></li>
+<li><p><strong>Construct</strong> the frequency distribution for the following results of the daily sale (in 1000 Tk.) in a textile firm recorded for a month.</p>
+<p>21, 21, 21, 22, 26, 20, 20, 20, 21, 21, 20, 20, 22, 20, 21, 23, 21, 22, 21, 25, 18, 24, 25, 19, 25, 18, 26, 23, 18, 24.</p>
+<p>Also <strong>comment</strong> about shape of the distribution of daily sales.</p></li>
 </ol>
-<p>**8. Thirty linear density tests made on the yarn have shown following results. 14.8, 14.2, 13.8, 13.5, 14.0, 14.2, 14.3, 14.6, 13.9, 14.0, 14.1, 13.2, 13.0, 14.2, 13.5, 13.0, 12.8, 13.9, 14.8, 15.0, 12.8, 13.4, 13.2, 14.0, 13.8, 13.9, 14.0, 14.0, 13.9, 14.8 Construct the grouped frequency distribution by taking class intervals 12.6–13.0; 13.1–13.5 and so on.</p>
+<p>**8. Thirty linear density tests made on the yarn have shown following results.</p>
+<p>14.8, 14.2, 13.8, 13.5, 14.0, 14.2, 14.3, 14.6, 13.9, 14.0, 14.1, 13.2, 13.0, 14.2, 13.5, 13.0, 12.8, 13.9, 14.8, 15.0, 12.8, 13.4, 13.2, 14.0, 13.8, 13.9, 14.0, 14.0, 13.9, 14.8.</p>
+<p><strong>Construct</strong> the grouped frequency distribution by taking class intervals 12.6–13.0; 13.1–13.5 and so on.</p>
 <ol start="9" type="1">
 <li>Following is the distribution of fabric samples according to the strength of fabric:</li>
 </ol>
@@ -791,7 +792,7 @@ window.Quarto = {
 </tr>
 </tbody>
 </table>
-<p>Draw the histogram for the above data and interpret it.</p>
+<p><strong>Draw</strong> the histogram for the above data and interpret it.</p>
 
 
 </section>
