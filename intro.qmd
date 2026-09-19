@@ -186,10 +186,9 @@ freq_table <- table(
 | \[7.00,7.25)   |     2     |
 | **Total**      |  $n=20$   |
 
-### *Histogram of ‘hairiness index’ data:*
-
 ```{r}
-h <- hist(histo,main = " ",xlab = "Hairiness index",
+h <- hist(histo,main = "Histogram of ‘hairiness index’ data",
+          xlab = "Hairiness index",
           breaks = seq(6, 7.25, by = 0.25),
           labels = TRUE,
           right = FALSE,
