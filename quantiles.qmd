@@ -250,7 +250,7 @@ boxplot(strength ~ concentration, data = tensile_data,
 
 ------------------------------------------------------------------------
 
-# Exercises
+## Exercises
 
 1.  **Daily Wages:** Find the $3^{\text{rd}}$ quartile and $60^{\text{th}}$ percentile for the following distribution of daily wages of temporary workers, and comment on the results:
 
