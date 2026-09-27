@@ -190,6 +190,16 @@
     ]
   },
   {
+    "objectID": "quantiles.html#exercises",
+    "href": "quantiles.html#exercises",
+    "title": "3  Partition values (quantiles)",
+    "section": "3.4 Exercises",
+    "text": "3.4 Exercises\n\nDaily Wages: Find the \\(3^{\\text{rd}}\\) quartile and \\(60^{\\text{th}}\\) percentile for the following distribution of daily wages of temporary workers, and comment on the results:\n\n\n\n\nDaily wages (Rs)\n40–49\n50–59\n60–69\n70–79\n80–89\n\n\n\n\nNo. of workers\n15\n20\n30\n45\n25\n\n\n\n\n\nFabric Strength: Calculate the \\(3^{\\text{rd}}\\) decile (\\(D_3\\)), \\(2^{\\text{nd}}\\) percentile (\\(P_2\\)), and \\(70^{\\text{th}}\\) percentile (\\(P_{70}\\)):\n\n\n\n\nFabric strength\n45–49\n50–54\n55–59\n60–64\n65–69\n70–74\n\n\n\n\nNo. of samples\n5\n10\n15\n20\n10\n5\n\n\n\n\n\nCoefficient of Variation (CV%): Calculate \\(Q_1\\) and \\(P_{70}\\) for the following data and comment on them:\n\n\n\n\nCV%\n3.0–3.5\n3.5–4.0\n4.0–4.5\n4.5–5.0\n5.0–5.5\n\n\n\n\nNo. of tests\n25\n4\n10\n16\n10\n\n\n\n\n\nGoods Weight: Compute the Median and \\(38^{\\text{th}}\\) percentile (\\(P_{38}\\)) for the following data:\n\n\n\n\nWeight (kg)\n10–19\n20–29\n30–39\n40–49\n50–59\n60–69\n\n\n\n\nNo. of goods\n6\n10\n16\n14\n8\n4\n\n\n\n\n\nYarn Unevenness (U%): Compute the \\(1^{\\text{st}}\\) quartile (\\(Q_1\\)), \\(7^{\\text{th}}\\) decile (\\(D_7\\)), and \\(38^{\\text{th}}\\) percentile (\\(P_{38}\\)) for the following raw measurements:\n2.25, 4.25, 2.65, 3.85, 5.82, 3.42, 4.44, 2.86, 2.88, 4.46\n\n\n\nLoom Comparison: A textile company measures fabric strength (psi) across 2 randomly selected looms:\n\n\n\n\nLoom\nMeasurements\n\n\n\n\nA\n99, 97, 97, 96, 97, 96, 92, 98\n\n\nB\n94, 95, 90, 92, 93, 94, 90, 92\n\n\n\n\nConstruct a parallel/comparative box-plot comparing fabric strength for Loom A and Loom B.\nBased on the box-plot, which loom produces better fabric in terms of strength? Which loom exhibits lower variability?",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Partition values (quantiles)</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "12  Summary",
