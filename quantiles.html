@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./central_tendency.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8244c66523fac62cbacdae4f74e334b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-066b562477012fc308cfc884aa1e7cf5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -82,7 +83,7 @@ const typesetMath = (el) => {
     var macros = [];
     for (var i = 0; i < mathElements.length; i++) {
       var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
         window.katex.render(texText.data, mathElements[i], {
           displayMode: mathElements[i].classList.contains('display'),
           throwOnError: false,
@@ -333,21 +334,17 @@ window.Quarto = {
 <p><strong>Arranged data:</strong><br>
 <code>22.6, 22.8, 22.9, 22.9, 23.0, 23.0, 23.0, 23.1, 23.2, 23.4</code></p>
 <p><strong>Computing</strong> <span class="math inline">\(P_{25}\)</span>:</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 P_{25} &amp;= \left[ 25 \times \frac{(10+1)}{100} \right]^{\text{th}}\text{ value} = 2.75^{\text{th}}\text{ value} \\
 &amp;= 2^{\text{nd}}\text{ value} + 0.75 \times (3^{\text{rd}}\text{ value} - 2^{\text{nd}}\text{ value}) \\
 &amp;= 22.8 + 0.75 \times (22.9 - 22.8) = 22.875
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p><strong>Computing</strong> <span class="math inline">\(P_{50}\)</span>:</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 P_{50} &amp;= \left[ 50 \times \frac{(10+1)}{100} \right]^{\text{th}}\text{ value} = 5.5^{\text{th}}\text{ value} \\
 &amp;= 5^{\text{th}}\text{ value} + 0.5 \times (6^{\text{th}}\text{ value} - 5^{\text{th}}\text{ value}) \\
 &amp;= 23.0 + 0.5 \times (23.0 - 23.0) = 23.0
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <hr>
 </section>
 </section>
@@ -460,13 +457,11 @@ P_{50} &amp;= \left[ 50 \times \frac{(10+1)}{100} \right]^{\text{th}}\text{ valu
 <p><span class="math display">\[\frac{N}{100} \times 50 = \frac{101}{100} \times 50 = 50.5\]</span></p>
 <p>The cumulative frequency just greater than <span class="math inline">\(50.5\)</span> is <span class="math inline">\(65\)</span>.<br>
 So, <strong>13.75–14.00</strong> is the <span class="math inline">\(50^{\text{th}}\)</span> percentile class.</p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 P_{50} &amp;= L_{0} + \frac{c}{f} \left( \frac{N}{100} \times 50 - \text{p.cf} \right) \\
 &amp;= 13.75 + \frac{0.25}{25} \times (50.5 - 40) \\
 &amp;= 13.855
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 <p><strong>Interpretation:</strong><br>
 This means 50% of the 101 observations (i.e., <span class="math inline">\(50\% \times 101 = 50.5 \approx 51\)</span> observations) have a linear density lying at or below <span class="math inline">\(13.855\)</span>.</p>
 <p><em>(Try computing</em> <span class="math inline">\(P_{75}\)</span> yourself as practice.)</p>
@@ -500,13 +495,11 @@ This means 50% of the 101 observations (i.e., <span class="math inline">\(50\% \
 <p>Here, <span class="math inline">\(n = 11\)</span>.</p>
 <p><strong>Sorted data:</strong><br>
 <code>29, 30, 36, 37, 42, 46, 55, 56, 59, 82, 139</code></p>
-<p><span class="math display">\[
-\begin{aligned}
+<p><span class="math display">\[\begin{aligned}
 Q_{1} = P_{25} &amp;= \left( 1 \times \frac{11+1}{4} \right)^{\text{th}}\text{ value} = 3^{\text{rd}}\text{ value} = 36 \\
 Q_{2} = P_{50} &amp;= \left( 2 \times \frac{11+1}{4} \right)^{\text{th}}\text{ value} = 6^{\text{th}}\text{ value} = 46 \\
 Q_{3} = P_{75} &amp;= \left( 3 \times \frac{11+1}{4} \right)^{\text{th}}\text{ value} = 9^{\text{th}}\text{ value} = 59
-\end{aligned}
-\]</span></p>
+\end{aligned}\]</span></p>
 </section>
 </section>
 <section id="interquartile-range-iqr" class="level3" data-number="3.2.2">
@@ -571,15 +564,15 @@ Figure&nbsp;3.1: Simple Box-plot of CPU Time (in seconds)
 <h4 data-number="3.3.4.1" class="anchored" data-anchor-id="data-table"><span class="header-section-number">3.3.4.1</span> Data Table</h4>
 <table class="caption-top table">
 <colgroup>
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
-<col style="width: 11%">
+<col style="width: 24%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 8%">
+<col style="width: 10%">
+<col style="width: 13%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -873,13 +866,14 @@ Figure&nbsp;3.2: Box plots of hardwood concentration data (Montgomery, Table 13.
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy

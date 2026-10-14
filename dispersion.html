@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.7.33">
+<meta name="generator" content="quarto-1.8.26">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -33,14 +33,15 @@ ul.task-list li input[type="checkbox"] {
 <link href="./quantiles.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea385d0e468b0dd5ea5bf0780b1290d9.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-587c61ba64f3a5504c4d52d930310e48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-8244c66523fac62cbacdae4f74e334b2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-066b562477012fc308cfc884aa1e7cf5.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -68,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -232,8 +262,23 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#chapter-overview-learning-objectives" id="toc-chapter-overview-learning-objectives" class="nav-link active" data-scroll-target="#chapter-overview-learning-objectives"><span class="header-section-number">4.1</span> Chapter Overview &amp; Learning Objectives</a></li>
+  <li><a href="#variation-or-dispersion" id="toc-variation-or-dispersion" class="nav-link" data-scroll-target="#variation-or-dispersion"><span class="header-section-number">4.2</span> Variation or dispersion</a></li>
+  <li><a href="#measures-of-variation-for-ungrouped-or-raw-data" id="toc-measures-of-variation-for-ungrouped-or-raw-data" class="nav-link" data-scroll-target="#measures-of-variation-for-ungrouped-or-raw-data"><span class="header-section-number">4.3</span> Measures of variation for ungrouped or raw data</a>
+  <ul class="collapse">
+  <li><a href="#range" id="toc-range" class="nav-link" data-scroll-target="#range"><span class="header-section-number">4.3.1</span> Range</a></li>
+  <li><a href="#inter-quartile-range" id="toc-inter-quartile-range" class="nav-link" data-scroll-target="#inter-quartile-range"><span class="header-section-number">4.3.2</span> Inter-quartile-range</a></li>
+  <li><a href="#variance-and-standard-deviation" id="toc-variance-and-standard-deviation" class="nav-link" data-scroll-target="#variance-and-standard-deviation"><span class="header-section-number">4.3.3</span> Variance and Standard deviation</a></li>
+  <li><a href="#coefficient-of-variation" id="toc-coefficient-of-variation" class="nav-link" data-scroll-target="#coefficient-of-variation"><span class="header-section-number">4.3.4</span> Coefficient of variation</a></li>
+  </ul></li>
+  <li><a href="#measures-of-variation-for-grouped-or-raw-data" id="toc-measures-of-variation-for-grouped-or-raw-data" class="nav-link" data-scroll-target="#measures-of-variation-for-grouped-or-raw-data"><span class="header-section-number">4.4</span> Measures of variation for grouped or raw data</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -257,8 +302,221 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="chapter-overview-learning-objectives" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="chapter-overview-learning-objectives"><span class="header-section-number">4.1</span> Chapter Overview &amp; Learning Objectives</h2>
+<p>By the end of this chapter, learners will be able to:</p>
+<ul>
+<li><p>Explain why central tendency alone fails to characterize quality variation in fiber, yarn, and fabric manufacturing.</p></li>
+<li><p>Calculate and interpret absolute and relative measures of dispersion for both ungrouped lab trials and grouped production data.</p></li>
+<li><p>Apply industrial benchmarks (such as Uster Statistics) to evaluate process capability using Coefficient of Variation (<span class="math inline">\(CV\%\)</span>).</p></li>
+</ul>
+</section>
+<section id="variation-or-dispersion" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="variation-or-dispersion"><span class="header-section-number">4.2</span> Variation or dispersion</h2>
+<p>Variability in data means lack of uniformity. It is also referred to as spread, scatter, or dispersion. We turn now to a discussion of some commonly used measures of variability.</p>
+</section>
+<section id="measures-of-variation-for-ungrouped-or-raw-data" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="measures-of-variation-for-ungrouped-or-raw-data"><span class="header-section-number">4.3</span> Measures of variation for ungrouped or raw data</h2>
+<section id="range" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="range"><span class="header-section-number">4.3.1</span> Range</h3>
+<p>Range, <span class="math inline">\(R=Maximum \ \ value- Minimum \ \ value\)</span></p>
+<ul>
+<li>Heavily influenced by extreme values</li>
+</ul>
+</section>
+<section id="inter-quartile-range" class="level3" data-number="4.3.2">
+<h3 data-number="4.3.2" class="anchored" data-anchor-id="inter-quartile-range"><span class="header-section-number">4.3.2</span> Inter-quartile-range</h3>
+<p>Inter-quartile-range, <span class="math inline">\(IQR=Q_3-Q_1\)</span></p>
+<ul>
+<li><p>It exhibits the variability in the middle 50% of the observations.</p></li>
+<li><p>The interquartile range is less sensitive to the extreme values in the sample than is the ordinary sample range.</p></li>
+</ul>
+</section>
+<section id="variance-and-standard-deviation" class="level3" data-number="4.3.3">
+<h3 data-number="4.3.3" class="anchored" data-anchor-id="variance-and-standard-deviation"><span class="header-section-number">4.3.3</span> Variance and Standard deviation</h3>
+<ul>
+<li><p>Sample variance (denoted by English Letter <span class="math inline">\(s^2\)</span>),</p>
+<p><span class="math display">\[s^2=\frac{(x_1-\bar x)^2+(x_2-\bar x)^2+...+(x_n-\bar x)^2}{n-1}=\frac{\sum(x_i-\bar x)^2}{n-1}\]</span></p>
+<p><span id="eq-sampl_var"><span class="math display">\[\therefore\ \  s^2 =\frac{\sum x_i^2-n(\bar x)^2}{n-1} \tag{4.1}\]</span></span></p>
+<p>and Sample SD,</p>
+<p><span class="math display">\[s=\sqrt {s^2}\]</span></p></li>
+<li><p>Population variance (denoted by Greek Letter <span class="math inline">\(\sigma ^2\)</span>),</p></li>
+</ul>
+<p><span class="math display">\[\sigma^2=\frac{(x_1-\mu)^2+(x_2-\mu)^2+...+(x_N-\mu)^2}{N}=\frac{\sum(x_i-\mu)^2}{N}=\frac{\sum x_i^2-N(\mu)^2}{N}\]</span></p>
+<p><span id="eq-pop_var"><span class="math display">\[\therefore \ \ \sigma^2=\frac{\sum x^2}{N}-\mu^2 \tag{4.2}\]</span></span></p>
+<p>and Population SD is</p>
+<p><span class="math display">\[\sigma =\sqrt {\sigma^2}\]</span></p>
+<p><strong>Note:</strong> In modern statistics and quality management, <strong>consistency is the hallmark of quality.</strong> While the <strong>Mean</strong> tells you if you are hitting your target, the <strong>Variation (Standard Deviation)</strong> tells you how reliable you are. High variation is often referred to as the “enemy” of quality because it creates unpredictability.</p>
+<p><strong>Problem :</strong> Ten-count tests made on certain yarn have shown following results.</p>
+<p>22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 23.1, 23.0, 22.9, 23.0</p>
+<p>Compute sample mean, sample variance and sample standard deviation.</p>
+<p><u><em>Solution:</em></u> Suppose <span class="math inline">\(X\)</span> be the count test.</p>
+<p>Here, <span class="math inline">\(n=10\)</span>; <span class="math inline">\(\sum x =229.9\)</span> ,</p>
+<p><span class="math inline">\(\sum x^2=x_1^2+x_2^2+...+x_n^2=22.8^2+23.2^2+...+23.0^2=5285.83\)</span></p>
+<p>So, the <strong>sample mean</strong> <span class="math inline">\(\bar x=\frac{\sum x}{n}=\frac{229.9}{10}=22.99\)</span> .</p>
+<p><strong>Sample variance</strong>, <span class="math inline">\(s^2=\frac{\sum x^2-n\cdot (\bar x ^2)}{n-1}=\frac{5285.83-10\cdot (22.99^2)}{10-1}=0.04766667\)</span> and</p>
+<p><strong>Sample SD,</strong> <span class="math inline">\(s=\sqrt  {s^2}=\sqrt {0.04766667}=0.218327\approx0.2183\)</span>.</p>
+</section>
+<section id="coefficient-of-variation" class="level3" data-number="4.3.4">
+<h3 data-number="4.3.4" class="anchored" data-anchor-id="coefficient-of-variation"><span class="header-section-number">4.3.4</span> Coefficient of variation</h3>
+<p><span id="eq-cv"><span class="math display">\[CV=\frac{SD}{Mean} \tag{4.3}\]</span></span></p>
+<ul>
+<li><p>CV is unit free.</p></li>
+<li><p>A lower CV indicates that the variation is small compared to the size of the mean, which refers <strong>greater consistency</strong> or <strong>reliability.</strong></p></li>
+<li><p>In general industry Standards for “Good Consistency”, <strong>CV should be less than 10%</strong> and <span class="math inline">\(CV\ge 30\%\)</span> indicates “Poor consistency” <span class="citation" data-cites="vanBelle2002">(<a href="references.html#ref-vanBelle2002" role="doc-biblioref"><strong>vanBelle2002?</strong></a>)</span> .</p></li>
+</ul>
+<p>Problem: <strong>Compute</strong> coefficient of variation of yarn-count data mentioned in Problem…..</p>
+<p><strong>Problem</strong> Five strength tests each carried out on the two fabrics have shown following results:</p>
+<p><strong>A:</strong> 15.2, 15.5, 15.0, 15.4, 15.6</p>
+<p><strong>B:</strong> 15.0, 14.8, 13.6, 15.5, 15.2</p>
+<p><strong>Find</strong> CV% for both and <strong>decide</strong> which fabric is more consistent.</p>
+<p><u><em>Solution:</em></u></p>
+<p><strong>Problem</strong> Following data represents number of end breaks recorded on two ring frames at ten occasions.</p>
+<p><strong>R/F-I:</strong> 12, 10, 8, 15, 9, 11, 14, 15, 8, 10</p>
+<p><strong>R/F-II:</strong> 10, 11, 12, 9, 12, 9, 11, 12, 11, 10</p>
+<p><strong>Find</strong> which ring frame is more consistent in terms of end breaks.</p>
+<p><u><em>Solution:</em></u></p>
+<div class="callout callout-style-simple callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Note</span>Exercise 1.1
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>1)</strong> An article describes an experiment to test the yield strength of circular tubes with caps welded to the ends. The first 8 yields (in kN) are: 104, 108, 126,126, 128, 128, 140, 156</p>
+<p><strong>Compute</strong> the sample mean, the standard deviation, and the coefficient of variation of the yield strength.</p>
+<p><strong>2)</strong> The “cold start ignition time” of an automobile engine is being investigated by a gasoline manufacturer. The following times (in seconds) were obtained for a test vehicle: 1.75, 1.92, 2.62, 2.35, 3.09, 3.15, 2.53, 1.91.</p>
+<p><strong>Calculate</strong> the sample mean, sample standard deviation and coefficient of variation of cold start ignition time.</p>
+<p><strong>3)</strong> Following are the results of count tests made on the production of two shifts:</p>
+<p><strong>Shift I:</strong> 11.7, 12.2, 12.0, 11.6, 10.9, 13.0, 11.0, 12.8, 11.5, 12.0</p>
+<p><strong>Shift II:</strong> 12.2, 11.6, 12.0, 12.1, 12.0, 12.3, 11.8, 11.6, 11.8, 12.0</p>
+<p>Using CV% <strong>decide</strong> which production is more consistent.<br>
+</p>
+</div>
+</div>
+</section>
+</section>
+<section id="measures-of-variation-for-grouped-or-raw-data" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="measures-of-variation-for-grouped-or-raw-data"><span class="header-section-number">4.4</span> Measures of variation for grouped or raw data</h2>
+<p>Sample Variance:</p>
+<p><span class="math display">\[s^2 = \frac{\sum_{i=1}^{k} f_i (m_i - \bar{x})^2}{n - 1}\]</span></p>
+<p>Sample Standard Deviation:</p>
+<p><span class="math display">\[s = \sqrt{\frac{\sum_{i=1}^{k} f_i (m_i - \bar{x})^2}{n - 1}}
+=\sqrt {\frac{\sum_i^k f_i m_i^2 -n\times \bar x^2 }{n-1}} \]</span></p>
+<p>where:</p>
+<p><span class="math inline">\(k\)</span> = number of class intervals</p>
+<p><span class="math inline">\(f_i\)</span> = frequency of the <span class="math inline">\(i\)</span>-th class</p>
+<p><span class="math inline">\(m_i\)</span> = midpoint of the <span class="math inline">\(i\)</span>-th class interval</p>
+<p><span class="math inline">\(n = \sum_{i=1}^{k} f_i\)</span> = total sample size</p>
+<p><span class="math inline">\(\bar{x} = \frac{\sum_{i=1}^{k} f_i m_i}{n}\)</span> = grouped sample mean</p>
+<p>Example: Dataset: Yarn Breaking Force (<span class="math inline">\(cN\)</span>)</p>
+<div class="cell">
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Force (cN)</th>
+<th style="text-align: right;">Frequency (f)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">240-250</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">250-260</td>
+<td style="text-align: right;">22</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">260-270</td>
+<td style="text-align: right;">40</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">270-280</td>
+<td style="text-align: right;">20</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">280-290</td>
+<td style="text-align: right;">10</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<ol type="a">
+<li><p><strong>Compute</strong> sample standard deviation and CV%.</p></li>
+<li><p>Does the quality of yarn acceptable? Why or why not?</p></li>
+</ol>
+<p>Solution:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 16%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 14%">
+<col style="width: 17%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;">Force (cN)</th>
+<th style="text-align: center;">Mid value (<span class="math inline">\(m_i\)</span>)</th>
+<th style="text-align: center;">Frequency (<span class="math inline">\(f_i\)</span>)</th>
+<th style="text-align: center;"><span class="math inline">\(f_i m_i\)</span></th>
+<th style="text-align: center;"><span class="math inline">\(f_i m_i^2\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">240-250</td>
+<td style="text-align: center;">245</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">250-260</td>
+<td style="text-align: center;">255</td>
+<td style="text-align: center;">22</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">260-270</td>
+<td style="text-align: center;">265</td>
+<td style="text-align: center;">40</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">270-280</td>
+<td style="text-align: center;">275</td>
+<td style="text-align: center;">20</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">280-290</td>
+<td style="text-align: center;">285</td>
+<td style="text-align: center;">10</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(n=\sum f_i=100\)</span></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+</tr>
+</tbody>
+</table>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -312,13 +570,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
