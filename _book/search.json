@@ -150,6 +150,46 @@
     ]
   },
   {
+    "objectID": "quantiles.html",
+    "href": "quantiles.html",
+    "title": "3  Partition values (quantiles)",
+    "section": "",
+    "text": "3.1 Percentiles\nCommon partition values are:\nPercentiles are 99 values which divide a data set into approximately 100 equal parts. There are 99 percentiles, normally denoted as:\n\\[P_{1}, P_{2}, \\dots, P_{25}, \\dots, P_{50}, \\dots, P_{75}, \\dots, P_{99}\\]",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Partition values (quantiles)</span>"
+    ]
+  },
+  {
+    "objectID": "quantiles.html#percentiles",
+    "href": "quantiles.html#percentiles",
+    "title": "3  Partition values (quantiles)",
+    "section": "",
+    "text": "3.1.1 A) Formula for Computing \\(j^{\\text{th}}\\) Percentile from Raw / Ungrouped Data\n\\[P_{j} = j^{\\text{th}}\\text{ Percentile} = \\left[ j \\times \\frac{(n+1)}{100} \\right]^{\\text{th}}\\text{ value}\\]\n\nExample 3.1 Ten-count tests made on a certain yarn have shown the following results:\n22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 23.1, 23.0, 22.9, 23.0\nCompute \\(P_{25}\\) and \\(P_{50}\\).\n\n\n3.1.1.1 Solution\nHere, \\(n = 10\\).\nArranged data:\n22.6, 22.8, 22.9, 22.9, 23.0, 23.0, 23.0, 23.1, 23.2, 23.4\nComputing \\(P_{25}\\):\n\\[\n\\begin{aligned}\nP_{25} &= \\left[ 25 \\times \\frac{(10+1)}{100} \\right]^{\\text{th}}\\text{ value} = 2.75^{\\text{th}}\\text{ value} \\\\\n&= 2^{\\text{nd}}\\text{ value} + 0.75 \\times (3^{\\text{rd}}\\text{ value} - 2^{\\text{nd}}\\text{ value}) \\\\\n&= 22.8 + 0.75 \\times (22.9 - 22.8) = 22.875\n\\end{aligned}\n\\]\nComputing \\(P_{50}\\):\n\\[\n\\begin{aligned}\nP_{50} &= \\left[ 50 \\times \\frac{(10+1)}{100} \\right]^{\\text{th}}\\text{ value} = 5.5^{\\text{th}}\\text{ value} \\\\\n&= 5^{\\text{th}}\\text{ value} + 0.5 \\times (6^{\\text{th}}\\text{ value} - 5^{\\text{th}}\\text{ value}) \\\\\n&= 23.0 + 0.5 \\times (23.0 - 23.0) = 23.0\n\\end{aligned}\n\\]\n\n\n\n\n3.1.2 B) Formula for Computing \\(j^{\\text{th}}\\) Percentile from Grouped Data / Frequency Distribution\n\\[P_{j} = L_{0} + \\frac{c}{f} \\left( \\frac{N}{100} \\times j - \\text{p.cf} \\right)\\]\nWhere:\n\n\\(L_{0} = \\text{Lower limit of the } j^{\\text{th}} \\text{ percentile class}\\)\n\\(c = \\text{Class interval of the } j^{\\text{th}} \\text{ percentile class}\\)\n\\(f = \\text{Frequency of the } j^{\\text{th}} \\text{ percentile class}\\)\n\\(\\text{p.cf} = \\text{Cumulative frequency of the class preceding the percentile class}\\)\n\n\nExample 3.2 The following data are related to the linear density of yarn:\n\n\n\n\n\n\n\n\n\n\n\n\n\nLinear density\n13.00–13.25\n13.25–13.50\n13.50–13.75\n13.75–14.00\n14.00–14.25\n14.25–14.50\n14.50–14.75\n\n\n\n\nNo. of tests\n8\n12\n20\n25\n22\n10\n4\n\n\n\nCompute and explain \\(P_{50}\\) and \\(P_{75}\\).\n\n\n3.1.2.1 Solution\nFirst, we compute the cumulative frequency (\\(cf\\)):\n\n\n\nLinear density\nFrequency (\\(f\\))\nCumulative Frequency (\\(cf\\))\n\n\n\n\n13.00–13.25\n8\n8\n\n\n13.25–13.50\n12\n20\n\n\n13.50–13.75\n20\n40\n\n\n13.75–14.00\n25\n65\n\n\n14.00–14.25\n22\n87\n\n\n14.25–14.50\n10\n97\n\n\n14.50–14.75\n4\n101\n\n\nTotal\n\\(N = 101\\)\n\n\n\n\nFinding \\(P_{50}\\):\nTo locate the \\(50^{\\text{th}}\\) percentile class, compute:\n\\[\\frac{N}{100} \\times 50 = \\frac{101}{100} \\times 50 = 50.5\\]\nThe cumulative frequency just greater than \\(50.5\\) is \\(65\\).\nSo, 13.75–14.00 is the \\(50^{\\text{th}}\\) percentile class.\n\\[\n\\begin{aligned}\nP_{50} &= L_{0} + \\frac{c}{f} \\left( \\frac{N}{100} \\times 50 - \\text{p.cf} \\right) \\\\\n&= 13.75 + \\frac{0.25}{25} \\times (50.5 - 40) \\\\\n&= 13.855\n\\end{aligned}\n\\]\nInterpretation:\nThis means 50% of the 101 observations (i.e., \\(50\\% \\times 101 = 50.5 \\approx 51\\) observations) have a linear density lying at or below \\(13.855\\).\n(Try computing \\(P_{75}\\) yourself as practice.)",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Partition values (quantiles)</span>"
+    ]
+  },
+  {
+    "objectID": "quantiles.html#quartiles",
+    "href": "quantiles.html#quartiles",
+    "title": "3  Partition values (quantiles)",
+    "section": "3.2 Quartiles",
+    "text": "3.2 Quartiles\nQuartiles are 3 values that divide a data set into approximately 4 equal parts:\n\n\\(Q_{1}\\) (\\(1^{\\text{st}}\\) quartile / lower quartile)\n\\(Q_{2}\\) (\\(2^{\\text{nd}}\\) quartile / median)\n\\(Q_{3}\\) (\\(3^{\\text{rd}}\\) quartile / upper quartile)\n\nNote that:\n\n\\(Q_{1} = P_{25}\\)\n\\(Q_{2} = P_{50} = \\text{Median}\\)\n\\(Q_{3} = P_{75}\\)\n\n\n3.2.1 Formula for Raw Data\n\\[Q_{j} = \\left( j \\times \\frac{n+1}{4} \\right)^{\\text{th}}\\text{ value}, \\quad \\text{for } j = 1, 2, 3\\]\n\nExample 3.3 Find \\(Q_{1}\\), \\(Q_{2}\\), and \\(Q_{3}\\) for the following data representing CPU time of 11 jobs (in seconds):\n59, 139, 46, 37, 42, 30, 55, 56, 36, 82, 29\n\n\n3.2.1.1 Solution\nHere, \\(n = 11\\).\nSorted data:\n29, 30, 36, 37, 42, 46, 55, 56, 59, 82, 139\n\\[\n\\begin{aligned}\nQ_{1} = P_{25} &= \\left( 1 \\times \\frac{11+1}{4} \\right)^{\\text{th}}\\text{ value} = 3^{\\text{rd}}\\text{ value} = 36 \\\\\nQ_{2} = P_{50} &= \\left( 2 \\times \\frac{11+1}{4} \\right)^{\\text{th}}\\text{ value} = 6^{\\text{th}}\\text{ value} = 46 \\\\\nQ_{3} = P_{75} &= \\left( 3 \\times \\frac{11+1}{4} \\right)^{\\text{th}}\\text{ value} = 9^{\\text{th}}\\text{ value} = 59\n\\end{aligned}\n\\]\n\n\n\n3.2.2 Interquartile Range (IQR)\nThe Interquartile Range is the difference between the third quartile (\\(Q_{3}\\)) and the first quartile (\\(Q_{1}\\)):\n\\[\\text{IQR} = Q_{3} - Q_{1}\\]\n\n\nExercise 3.1 (Question on Interpretation) In a class of 40 students, mid-term test marks were collected and \\(P_{20}\\) was found to be 23.\n\nWhat does \\(P_{20} = 23\\) mean?\nApproximately how many students received a score of 23 or less?\n\nAnswer:\n\\(P_{20} = 23\\) means that 20% of the students scored 23 or fewer marks.\nNumber of students scoring 23 or less = \\(40 \\times 20\\% = 8\\) students.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Partition values (quantiles)</span>"
+    ]
+  },
+  {
+    "objectID": "quantiles.html#box-plots-and-the-five-number-summary",
+    "href": "quantiles.html#box-plots-and-the-five-number-summary",
+    "title": "3  Partition values (quantiles)",
+    "section": "3.3 Box-Plots and the Five-Number Summary",
+    "text": "3.3 Box-Plots and the Five-Number Summary\nFive-Number Summary\nThe minimum, first quartile (\\(Q_1\\)), median (\\(Q_2\\)), third quartile (\\(Q_3\\)), and maximum, taken together, are referred to as the five-number summary of a data set.\n\n3.3.1 Box-and-Whisker Plot\nA box-plot (or box-and-whisker plot) is a chart used in exploratory data analysis to visually display the distribution of numerical data and its skewness through the five-number summary.\n\n\n\n\n\n\n\n\nFigure 3.1: Simple Box-plot of CPU Time (in seconds)\n\n\n\n\n\n\n\n3.3.2 Significance of a Box-Plot\n\nProvides a quick visual summary of data distribution.\nShows the central tendency from the line inside the box (Median).\nDisplays total spread (Minimum to Maximum) as well as middle 50% spread (\\(\\text{IQR} = Q_3 - Q_1\\)).\nGives clear indications about the skewness/shape of the distribution.\n\n\n\n\n3.3.3 Parallel / Comparative Box-Plots\nBox-plots are frequently used to compare multiple groups or populations side-by-side using the same scale.\n\n\n3.3.4 Example: Tensile Strength of Paper\n(Adapted from D.C. Montgomery, Applied Statistics and Probability for Engineers)\nA paper manufacturer wants to improve product tensile strength. Engineering tests four levels of hardwood concentration in paper pulp: 5%, 10%, 15%, and 20%. Six test specimens are prepared at each concentration level.\n\n3.3.4.1 Data Table\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nHardwood Conc. (%)\nObs 1\nObs 2\nObs 3\nObs 4\nObs 5\nObs 6\nTotals\nAverages\n\n\n\n\n5%\n7\n8\n15\n11\n9\n10\n60\n10.00\n\n\n10%\n12\n17\n13\n18\n19\n15\n94\n15.67\n\n\n15%\n14\n18\n19\n17\n16\n18\n102\n17.00\n\n\n20%\n19\n25\n22\n23\n18\n20\n127\n21.17\n\n\nOverall\n\n\n\n\n\n\n383\n15.96\n\n\n\n\n\n\n\n\n\n\n\nFigure 3.2: Box plots of hardwood concentration data (Montgomery, Table 13.1)\n\n\n\n\n\n\n\n3.3.4.2 Interpretation\n\nEffect on Strength: Increasing hardwood concentration consistently increases mean and median tensile strength.\nSymmetry & Variability: Distribution across levels is relatively symmetric, and dispersion/variability does not drastically change across treatment groups.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>Partition values (quantiles)</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "12  Summary",

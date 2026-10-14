@@ -1,1 +1,203 @@
+---
+output: html_document
+editor_options: 
+  chunk_output_type: console
+---
+
 # Measures of variation
+
+## Chapter Overview & Learning Objectives
+
+By the end of this chapter, learners will be able to:
+
+- Explain why central tendency alone fails to characterize quality variation in fiber, yarn, and fabric manufacturing.
+
+- Calculate and interpret absolute and relative measures of dispersion for both ungrouped lab trials and grouped production data.
+
+- Apply industrial benchmarks (such as Uster Statistics) to evaluate process capability using Coefficient of Variation ($CV\%$).
+
+## Variation or dispersion
+
+Variability in data means lack of uniformity. It is also referred to as spread, scatter, or dispersion. We turn now to a discussion of some commonly used measures of variability.
+
+## Measures of variation for ungrouped or raw data
+
+### Range
+
+Range, $R=Maximum \ \ value- Minimum \ \ value$
+
+- Heavily influenced by extreme values
+
+### Inter-quartile-range
+
+Inter-quartile-range, $IQR=Q_3-Q_1$
+
+- It exhibits the variability in the middle 50% of the observations.
+
+- The interquartile range is less sensitive to the extreme values in the sample than is the ordinary sample range.
+
+### Variance and Standard deviation
+
+- Sample variance (denoted by English Letter $s^2$),
+
+  $$s^2=\frac{(x_1-\bar x)^2+(x_2-\bar x)^2+...+(x_n-\bar x)^2}{n-1}=\frac{\sum(x_i-\bar x)^2}{n-1}$$
+
+  $$\therefore\ \  s^2 =\frac{\sum x_i^2-n(\bar x)^2}{n-1}$$ {#eq-sampl_var}
+
+  and Sample SD,
+
+  $$s=\sqrt {s^2}$$
+
+- Population variance (denoted by Greek Letter $\sigma ^2$),
+
+$$\sigma^2=\frac{(x_1-\mu)^2+(x_2-\mu)^2+...+(x_N-\mu)^2}{N}=\frac{\sum(x_i-\mu)^2}{N}=\frac{\sum x_i^2-N(\mu)^2}{N}$$
+
+$$\therefore \ \ \sigma^2=\frac{\sum x^2}{N}-\mu^2$$ {#eq-pop_var}
+
+and Population SD is
+
+$$\sigma =\sqrt {\sigma^2}$$
+
+**Note:** In modern statistics and quality management, **consistency is the hallmark of quality.** While the **Mean** tells you if you are hitting your target, the **Variation (Standard Deviation)** tells you how reliable you are. High variation is often referred to as the "enemy" of quality because it creates unpredictability.
+
+**Problem :** Ten-count tests made on certain yarn have shown following results.
+
+22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 23.1, 23.0, 22.9, 23.0
+
+Compute sample mean, sample variance and sample standard deviation.
+
+[*Solution:*]{.underline} Suppose $X$ be the count test.
+
+```{r}
+yarn_cnt=c(22.8, 23.2, 22.9, 22.6, 23.4, 23.0, 
+           23.1, 23.0, 22.9, 23.0  )
+#length(yarn_cnt)
+#sum(yarn_cnt)
+#sum(yarn_cnt^2)
+#mean(yarn_cnt)
+#var(yarn_cnt)
+```
+
+Here, $n=10$; $\sum x =229.9$ ,
+
+$\sum x^2=x_1^2+x_2^2+...+x_n^2=22.8^2+23.2^2+...+23.0^2=5285.83$
+
+So, the **sample mean** $\bar x=\frac{\sum x}{n}=\frac{229.9}{10}=22.99$ .
+
+**Sample variance**, $s^2=\frac{\sum x^2-n\cdot (\bar x ^2)}{n-1}=\frac{5285.83-10\cdot (22.99^2)}{10-1}=0.04766667$ and
+
+**Sample SD,** $s=\sqrt  {s^2}=\sqrt {0.04766667}=0.218327\approx0.2183$.
+
+### Coefficient of variation
+
+$$CV=\frac{SD}{Mean}$$ {#eq-cv}
+
+- CV is unit free.
+
+- A lower CV indicates that the variation is small compared to the size of the mean, which refers **greater consistency** or **reliability.**
+
+- In general industry Standards for "Good Consistency", **CV should be less than 10%** and $CV\ge 30\%$ indicates "Poor consistency" [@vanBelle2002] .
+
+Problem: **Compute** coefficient of variation of yarn-count data mentioned in Problem.....
+
+**Problem** Five strength tests each carried out on the two fabrics have shown following results:
+
+**A:** 15.2, 15.5, 15.0, 15.4, 15.6
+
+**B:** 15.0, 14.8, 13.6, 15.5, 15.2
+
+**Find** CV% for both and **decide** which fabric is more consistent.
+
+[*Solution:*]{.underline}
+
+**Problem** Following data represents number of end breaks recorded on two ring frames at ten occasions.
+
+**R/F-I:** 12, 10, 8, 15, 9, 11, 14, 15, 8, 10
+
+**R/F-II:** 10, 11, 12, 9, 12, 9, 11, 12, 11, 10
+
+**Find** which ring frame is more consistent in terms of end breaks.
+
+[*Solution:*]{.underline}
+
+::: {.callout-note appearance="simple"}
+## Exercise 1.1
+
+**1)** An article describes an experiment to test the yield strength of circular tubes with caps welded to the ends. The first 8 yields (in kN) are: 104, 108, 126,126, 128, 128, 140, 156
+
+**Compute** the sample mean, the standard deviation, and the coefficient of variation of the yield strength.
+
+**2)** The “cold start ignition time” of an automobile engine is being investigated by a gasoline manufacturer. The following times (in seconds) were obtained for a test vehicle: 1.75, 1.92, 2.62, 2.35, 3.09, 3.15, 2.53, 1.91.
+
+**Calculate** the sample mean, sample standard deviation and coefficient of variation of cold start ignition time.
+
+**3)** Following are the results of count tests made on the production of two shifts:
+
+**Shift I:** 11.7, 12.2, 12.0, 11.6, 10.9, 13.0, 11.0, 12.8, 11.5, 12.0
+
+**Shift II:** 12.2, 11.6, 12.0, 12.1, 12.0, 12.3, 11.8, 11.6, 11.8, 12.0
+
+Using CV% **decide** which production is more consistent.\
+:::
+
+## Measures of variation for grouped or raw data
+
+Sample Variance:
+
+$$s^2 = \frac{\sum_{i=1}^{k} f_i (m_i - \bar{x})^2}{n - 1}$$
+
+Sample Standard Deviation:
+
+$$s = \sqrt{\frac{\sum_{i=1}^{k} f_i (m_i - \bar{x})^2}{n - 1}}
+=\sqrt {\frac{\sum_i^k f_i m_i^2 -n\times \bar x^2 }{n-1}} $$
+
+where:
+
+$k$ = number of class intervals
+
+$f_i$ = frequency of the $i$-th class
+
+$m_i$ = midpoint of the $i$-th class interval
+
+$n = \sum_{i=1}^{k} f_i$ = total sample size
+
+$\bar{x} = \frac{\sum_{i=1}^{k} f_i m_i}{n}$ = grouped sample mean
+
+Example: Dataset: Yarn Breaking Force ($cN$)
+
+```{r}
+# Create the 5-class grouped data frame
+yarn_data <- data.frame(
+  class_interval = c("240-250", "250-260", "260-270", "270-280", "280-290"),
+  #midpoint       = c(245, 255, 265, 275, 285),
+  frequency      = c(8, 22, 40, 20, 10)
+)
+
+# Calculations
+n <- sum(yarn_data$frequency)
+x_bar <- sum(yarn_data$frequency * yarn_data$midpoint) / n
+variance <- sum(yarn_data$frequency * (yarn_data$midpoint - x_bar)^2) / (n - 1)
+sd_val <- sqrt(variance)
+cv <- (sd_val / x_bar) * 100
+
+knitr::kable(yarn_data, col.names = c("Force (cN)", 
+                                      #"Midpoint (m)", 
+                                      
+                                      "Frequency (f)")
+             )
+```
+
+a)  **Compute** sample standard deviation and CV%.
+
+b)  Does the quality of yarn acceptable? Why or why not?
+
+Solution:
+
+| Force (cN) | Mid value ($m_i$) | Frequency ($f_i$) | $f_i m_i$ | $f_i m_i^2$ |
+|:----------:|:-----------------:|:-----------------:|:---------:|:-----------:|
+|  240-250   |        245        |         8         |           |             |
+|  250-260   |        255        |        22         |           |             |
+|  260-270   |        265        |        40         |           |             |
+|  270-280   |        275        |        20         |           |             |
+|  280-290   |        285        |        10         |           |             |
+|            |                   | $n=\sum f_i=100$  |           |             |
