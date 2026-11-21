@@ -250,6 +250,66 @@
     ]
   },
   {
+    "objectID": "shape.html",
+    "href": "shape.html",
+    "title": "5  Skewness and Kurtosis",
+    "section": "",
+    "text": "5.1 Skewness\nMeasures of shape are tools that can be used to describe the shape of a distribution of data. In this section, we examine two measures of shape, skewness and kurtosis.\nSkewness refers to lack of symmetry or departure from symmetry. There are three types of skewness based on the histogram or density plot of data.\na) Positive skewness/ Skewed right- where mean&gt;median&gt;mode\nb) Symmetrical distribution- in a perfect symmetrical distribution mean=median=mode\nc) Negative skewness/ Skewed left- where mean&lt;median&lt;mode\nThe typical example of skewness is exhibited in Figure 5.1 with the relative position of mean, median and mode.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Skewness and Kurtosis</span>"
+    ]
+  },
+  {
+    "objectID": "shape.html#skewness",
+    "href": "shape.html#skewness",
+    "title": "5  Skewness and Kurtosis",
+    "section": "",
+    "text": "Figure 5.1: Types of skewness and relative position of mean, median, mode",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Skewness and Kurtosis</span>"
+    ]
+  },
+  {
+    "objectID": "shape.html#kurtosis",
+    "href": "shape.html#kurtosis",
+    "title": "5  Skewness and Kurtosis",
+    "section": "5.2 Kurtosis",
+    "text": "5.2 Kurtosis\nKurtosis describes the amount of peakedness of a distribution.\n\nDistributions that are high and thin are referred to as leptokurtic distributions.\nDistributions that are flat and spread out are referred to as platykurtic distributions.\nBetween these two types are distributions that are more “normal” in shape, referred to as mesokurtic distributions.\n\nThese three types of kurtosis are illustrated in Figure 5.2.\n\n\n\n\n\n\nFigure 5.2: Different types of kurtosis",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Skewness and Kurtosis</span>"
+    ]
+  },
+  {
+    "objectID": "shape.html#measures-of-skewness-and-kurtosis",
+    "href": "shape.html#measures-of-skewness-and-kurtosis",
+    "title": "5  Skewness and Kurtosis",
+    "section": "5.3 Measures of skewness and kurtosis",
+    "text": "5.3 Measures of skewness and kurtosis\nThe coefficient of Skewness, \\[S_k=\\frac{1}{n}\\frac{\\sum (X-\\bar X)^3}{s^3}\\]\nDecision:\n\n\\(S_k&gt;0\\) implies positive skewness\n\\(S_k&lt;0\\) implies negative skewness\n\\(S_k \\approx 0\\) implies symmetric/ zero skewness\n\nThe coefficient of kurtosis,\n\\[\nK_t=\\frac{1}{n}\\frac{\\sum (X-\\bar X)^4}{s^4}\\]\nDecision:\n\n\\(K_t &gt; 3\\) implies leptokurtic\n\\(K_t &lt;3\\) implies platykurtic\n\\(K_t \\approx 3\\) implies mesokurtic",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Skewness and Kurtosis</span>"
+    ]
+  },
+  {
+    "objectID": "shape.html#example-810-marks",
+    "href": "shape.html#example-810-marks",
+    "title": "5  Skewness and Kurtosis",
+    "section": "5.4 Example (8/10 marks)",
+    "text": "5.4 Example (8/10 marks)\n\nCalculate the coefficient of skeweness (\\(S_k\\)) and coefficient of kurtosis (\\(K_t\\)).\nComment about the skewness and kurtosis of the data\n\nData: 3,5,6,9,12\nSolution:\n\nHere sample mean, \\(\\bar x=\\frac{\\sum x}{n}=\\frac{3+5+...+12}{5}=7\\)\n\n\n\n\n\n\n\n\n\n\n\n\\(x\\)\n\\((x-\\bar x)\\)\n\\((x-\\bar x)^2\\)\n\\((x-\\bar x)^3\\)\n\\((x-\\bar x)^4\\)\n\n\n\n\n3\n-4\n16\n-64\n256\n\n\n5\n-2\n4\n-8\n16\n\n\n6\n-1\n1\n-1\n1\n\n\n9\n2\n4\n8\n16\n\n\n12\n5\n25\n125\n625\n\n\n\\(\\sum x=35\\)\n\\(\\sum (x-\\bar x)=0\\)\n\\(\\sum(x-\\bar x)^2=50\\)\n\\(\\sum(x-\\bar x)^3=60\\)\n\\(\\sum (x-\\bar x)^4=914\\)\n\n\n\n\nSample standard deviation,\n\\[s=\\sqrt \\frac{\\sum(x-\\bar x)^2}{n-1}=\\sqrt \\frac{50}{5-1}=3.54 \\ \\  (approx.)\\]\nCoefficient of skewness\n\\[S_k=\\frac{1}{n} \\frac{\\sum (x-\\bar x)^3}{s^3}=0.27 &gt;0\\]\n\nSo the distribution is positively skewed.\n\nCoefficient of kurtosis\n\n\\[K_t=\\frac{1}{n} \\frac{\\sum (x-\\bar x)^4}{s^4}=1.16&lt;3\\]\nSo the distribution is platykurtic.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Skewness and Kurtosis</span>"
+    ]
+  },
+  {
+    "objectID": "shape.html#exercise",
+    "href": "shape.html#exercise",
+    "title": "5  Skewness and Kurtosis",
+    "section": "5.5 Exercise",
+    "text": "5.5 Exercise\nA sample of 7 data entry clerks employed in the Harry County Tax Office revised the following number of tax records last hour: 100, 75, 70, 65, 80, 68 and 50.\nComment about skewness and kurtosis of the number of tax records.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>Skewness and Kurtosis</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "12  Summary",
