@@ -12,7 +12,7 @@ $$Y=A+Bx +e$$ {#eq-simpl_lr}
 
 Where $e$ is the error term and assumed to be normally distributed with mean 0 and variance $\sigma^2$.
 
-The equation @eq-simpl_lr is called the **Simple Linear Regression (SLR).**
+The @eq-simpl_lr is called the **Simple Linear Regression (SLR).**
 
 Our goal is to estimate the parameters $A$ and $B$ from sample data. One approach is to estimate $A$ and $B$ by minimizing error sum of squares, alos known as **Least Square** estimate by the following formulas:
 
