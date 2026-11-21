@@ -340,6 +340,16 @@
     ]
   },
   {
+    "objectID": "regression.html",
+    "href": "regression.html",
+    "title": "7  Simple Linear Regression",
+    "section": "",
+    "text": "We all know the equation of straight line:\n\\[y=mx+c\\]\nWhich shows deterministic relation between x and y. But in reality relation between x and y may not be deterministic; rather random/ stochastic. For example for same input of x we may find different output y.\nHere comes the concept of regression. More precisely if \\(Y\\) is a random variable which depends on a fixed variable \\(x\\) (independent variable) with some extent then the stochastic relation between \\(x\\) and \\(Y\\) is represented as:\n\\[Y=A+Bx +e \\tag{7.1}\\]\nWhere \\(e\\) is the error term and assumed to be normally distributed with mean 0 and variance \\(\\sigma^2\\).\nThe equation Equation 7.1 is called the Simple Linear Regression (SLR).\nOur goal is to estimate the parameters \\(A\\) and \\(B\\) from sample data. One approach is to estimate \\(A\\) and \\(B\\) by minimizing error sum of squares, alos known as Least Square estimate by the following formulas:\n\nEstimator of \\(B\\):\n\\[b=\\frac{\\sum xy-n \\cdot \\bar x \\cdot \\bar y}{\\sum x^2-n\\cdot \\bar x^2}=\\frac{S_{xy}}{SS_x}  \\ \\ \\ \\ (say)\\]\nEstimator of \\(A\\):\n\n\\[a=\\bar y-b \\bar x\\]\nAfter having the value of \\(a\\) and \\(b\\) from sample data our estimated simple linear regression line becomes:\n\\[\\hat y=a+b x\\]\nAn scatter plot with estimated /fitted regression line:\n\n\n\n\n\n\n\n\nFigure 7.1: Estimated linear regression line of Y on x (n = 15).\n\n\n\n\n\nExample\nConsider a delivery company estimating fuel used for a trip from the distance traveled.\nLet (x) be distance in hundreds of kilometers, and (y) be fuel used in liters:\n\n\n\nTrip\nDistance (x) (100 km)\nFuel (y) (L)\n\n\n\n\n1\n1\n8\n\n\n2\n2\n11\n\n\n3\n3\n13\n\n\n4\n4\n17\n\n\n5\n5\n18\n\n\n6\n6\n22\n\n\n\nEstimation\nWe have to estimate the regression equation\n\\[\n\\hat{y}=a+bx.\n\\]\nThe sample means are\n\\[\n\\bar{x}=\\frac{1+2+3+4+5+6}{6}=3.5,\n\\qquad\n\\bar{y}=\\frac{8+11+13+17+18+22}{6}\\approx14.833.\n\\]\nThe sum of cross-products and the sum of squared deviations for (x) are\n\\[\nS_{xy}=\\sum xy -n \\bar{x} \\bar{y}=48.5 \\ \\ (plz. check)\n\\]\n\\[\nSS_x=\\sum x^2-n \\bar{x}^2=17.5.\n\\]\nTherefore, the estimated slope is\n\\[\nb=\\frac{SS_{xy}}{SS_x}\n=\\frac{48.5}{17.5}\n\\approx2.77.\n\\]\nThe estimated intercept is\n\\[\na=\\bar{y}-b\\bar{x}\n=14.833-(2.77)(3.5)\n\\approx5.13.\n\\]\nSo the estimated regression equation is\n\\[\n\\boxed{\\hat{y}=5.13+2.77x}.\n\\]\nPrediction:\nFor a trip of (450) km, (x=4.5). The predicted fuel use is\n\\[\n\\hat{y}=5.13+2.77(4.5)\\approx17.6\\text{ liters}.\n\\]\nThe model estimates that the trip will use about 17.6 liters of fuel.",
+    "crumbs": [
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Simple Linear Regression</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "12  Summary",
