@@ -1,1 +1,148 @@
 # Correlation analysis
+
+## **Definition**
+
+**Correlation** measures the *degree* and *direction* of **linear relationship** between two quantitative variables.
+
+## **Scatter diagram**
+
+is a graphical technique to identify **correlation** between variables. For example,say we have two variables $X$ and $Y$ with $n$ pairs of observations $(x_i, y_i)$. For $n=15$ observations :
+
+| Observation | $x$ | $y$ |
+|:-----------:|:---:|:---:|
+|      1      | 10  | 22  |
+|      2      | 11  | 25  |
+|      3      | 11  | 23  |
+|      4      | 12  | 28  |
+|      5      | 13  | 30  |
+|      6      | 14  | 32  |
+|      7      | 14  | 35  |
+|      8      | 15  | 34  |
+|      9      | 16  | 38  |
+|     10      | 17  | 40  |
+|     11      | 17  | 37  |
+|     12      | 18  | 43  |
+|     13      | 19  | 45  |
+|     14      | 19  | 42  |
+|     15      | 20  | 48  |
+
+**Scatter Plot of X and Y ( see @fig-xy-int-scatter)**
+
+```{r}
+#| label: fig-xy-int-scatter
+#| fig-cap: "Scatter plot of X and Y with a linear trend line."
+#| fig-width: 7
+#| fig-height: 4.5
+
+library(ggplot2)
+library(tibble)
+
+df <- tibble(
+  obs = 1:15,
+  x = c(10L, 11L, 11L, 12L, 13L, 14L, 14L, 15L,
+        16L, 17L, 17L, 18L, 19L, 19L, 20L),
+  y = c(22L, 25L, 23L, 28L, 30L, 32L, 35L, 34L,
+        38L, 40L, 37L, 43L, 45L, 42L, 48L)
+)
+
+ggplot(df, aes(x = x, y = y)) +
+  geom_point(color = "#1f77b4", size = 3.2, alpha = 0.9) +
+  geom_smooth(method = "lm", se = FALSE, color = "#d62728", linetype = "dashed", linewidth = 0.8) +
+  scale_x_continuous(limits = c(10, 20), breaks = seq(10, 20, by = 1)) +
+  scale_y_continuous(limits = c(20, 50), breaks = seq(20, 50, by = 5)) +
+  labs(
+    title = "Scatter Plot of  X vs. Y (n = 15)",
+    #subtitle = "Each step of +1 in X roughly corresponds to +2.5 in Y",
+    x = "X",
+    y = "Y"
+  ) +
+  theme_minimal(base_size = 12)
+```
+
+## **Measures of correlation: Coefficient of correlation (r)**
+
+**Coefficient of correlation (r):**
+
+$$r=\frac{\sum xy-n (\bar x) (\bar y)}{\sqrt{ (\sum x^2-n\bar x^2\ \ )} \sqrt {(\sum y^2-n \bar y^2 \ \ )}}=\frac{S_{xy}}{S_x \cdot S_y}  (say)$$ **Properties:**
+
+a\) $r$ always lies between -1 and +1 (inclusive) that is $-1 \le r\le +1$
+
+b\) $r$ close to +1 implies *strong* **positive** correlation
+
+c\) $r$ close to -1 implies *strong* **negative** correlation
+
+d\) $r$ close to 0 implies *weak/very weak* correlation (may be positive or negative)
+
+**Example 1:** **Compute** *correlation coefficient* and **interpret** its value.
+
+| Observation | $x$ | $y$ |
+|:-----------:|:---:|:---:|
+|      1      | 10  | 22  |
+|      2      | 12  | 26  |
+|      3      | 14  | 29  |
+|      4      | 16  | 35  |
+|      5      | 18  | 41  |
+|      6      | 20  | 46  |
+
+Solution:
+
+```{r}
+df_pos <- tibble(
+  obs = 1:6,
+  x = c(10L, 12L, 14L, 16L, 18L, 20L),
+  y = c(22L, 26L, 29L, 35L, 41L, 46L)
+)
+
+#sum(df_pos$y)
+sum(df_pos$x^2)
+```
+
+Here, $n=6$
+
+- $\sum x=90$
+
+- $\sum x^2=1420$
+
+- $\sum y=199$
+
+- $\sum y^2=7023$
+
+- $\sum xy=3156$
+
+- $\bar x=\frac{\sum x}{n}=90/6=15$
+
+- $\bar y= 33.17$
+
+$$S_{xy}=\sum xy-n. \bar x. \bar y=3156-6(15)(33.17)=170.7$$
+
+$$S_x=\sqrt{\sum x^2-n. \bar x^2}=\sqrt{1420-6(15^2)}=\sqrt {70}=8.37$$
+
+$$S_y=\sqrt{\sum y^2-n. \bar y^2}=\sqrt{7023-6(33.17^2)}=\sqrt{421.51}=20.53$$
+
+Hence, 
+$$
+r=\frac{S_{xy}}{S_x \cdot S_y}=\frac{170.7}{(8.36) (20.53)}=0.9946
+$$
+
+So X and Y are very **strongly** *positively* correlated.
+
+**Example 2:** Negative Correlation (Ans: $r = -0.9986$)
+
+| Observation | $x$ | $y$ |
+|:-----------:|:---:|:---:|
+|      1      | 10  | 47  |
+|      2      | 12  | 42  |
+|      3      | 14  | 38  |
+|      4      | 16  | 33  |
+|      5      | 18  | 27  |
+|      6      | 20  | 23  |
+
+```{r}
+df_neg <- tibble(
+  obs = 1:6,
+  x = c(10L, 12L, 14L, 16L, 18L, 20L),
+  y = c(47L, 42L, 38L, 33L, 27L, 23L)
+)
+
+#cor(df_neg$x,df_neg$y)
+```
