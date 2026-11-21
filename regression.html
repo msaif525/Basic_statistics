@@ -293,12 +293,12 @@ window.Quarto = {
 <p>Here comes the concept of regression. More precisely if <span class="math inline">\(Y\)</span> is a random variable which depends on a fixed variable <span class="math inline">\(x\)</span> (independent variable) with some extent then the <em>stochastic relation</em> between <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span> is represented as:</p>
 <p><span id="eq-simpl_lr"><span class="math display">\[Y=A+Bx +e \tag{7.1}\]</span></span></p>
 <p>Where <span class="math inline">\(e\)</span> is the error term and assumed to be normally distributed with mean 0 and variance <span class="math inline">\(\sigma^2\)</span>.</p>
-<p>The <a href="#eq-simpl_lr" class="quarto-xref">Equation&nbsp;<span>7.1</span></a> is called the <strong>Simple Linear Regression (SLR).</strong></p>
+<p>The equation <a href="#eq-simpl_lr" class="quarto-xref">Equation&nbsp;<span>7.1</span></a> is called the <strong>Simple Linear Regression (SLR).</strong></p>
 <p>Our goal is to estimate the parameters <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> from sample data. One approach is to estimate <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by minimizing error sum of squares, alos known as <strong>Least Square</strong> estimate by the following formulas:</p>
 <ul>
-<li><p>Estimator of <span class="math inline">\(B\)</span>:</p>
+<li><p>Estimator of <span class="math inline">\(B\)</span> (slope):</p>
 <p><span class="math display">\[b=\frac{\sum xy-n \cdot \bar x \cdot \bar y}{\sum x^2-n\cdot \bar x^2}=\frac{S_{xy}}{SS_x}  \ \ \ \ (say)\]</span></p></li>
-<li><p>Estimator of <span class="math inline">\(A\)</span>:</p></li>
+<li><p>Estimator of <span class="math inline">\(A\)</span> (y-intercept):</p></li>
 </ul>
 <p><span class="math display">\[a=\bar y-b \bar x\]</span></p>
 <p>After having the value of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from sample data our estimated simple linear regression line becomes:</p>
@@ -318,89 +318,77 @@ Figure&nbsp;7.1: Estimated linear regression line of Y on x (n = 15).
 </div>
 </div>
 </div>
-<p><strong>Example</strong></p>
-<p>Consider a delivery company estimating fuel used for a trip from the distance traveled.</p>
+<p><strong>Example</strong> Consider a delivery company estimating fuel used for a trip from the distance traveled.</p>
 <p>Let (x) be distance in hundreds of kilometers, and (y) be fuel used in liters:</p>
 <table class="caption-top table">
+<colgroup>
+<col style="width: 9%">
+<col style="width: 22%">
+<col style="width: 22%">
+</colgroup>
 <thead>
 <tr class="header">
 <th>Trip</th>
-<th style="text-align: right;">Distance (x) (100 km)</th>
-<th style="text-align: right;">Fuel (y) (L)</th>
+<th style="text-align: center;"><p>Distance (x)</p>
+<p>(in 100 km)</p></th>
+<th style="text-align: center;"><p>Fuel (y)</p>
+<p>(in Liter)</p></th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td>1</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">8</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">8</td>
 </tr>
 <tr class="even">
 <td>2</td>
-<td style="text-align: right;">2</td>
-<td style="text-align: right;">11</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">11</td>
 </tr>
 <tr class="odd">
 <td>3</td>
-<td style="text-align: right;">3</td>
-<td style="text-align: right;">13</td>
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">13</td>
 </tr>
 <tr class="even">
 <td>4</td>
-<td style="text-align: right;">4</td>
-<td style="text-align: right;">17</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">17</td>
 </tr>
 <tr class="odd">
 <td>5</td>
-<td style="text-align: right;">5</td>
-<td style="text-align: right;">18</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">18</td>
 </tr>
 <tr class="even">
 <td>6</td>
-<td style="text-align: right;">6</td>
-<td style="text-align: right;">22</td>
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">22</td>
 </tr>
 </tbody>
 </table>
-<p><strong>Estimation</strong></p>
-<p>We have to estimate the regression equation</p>
-<p><span class="math display">\[
-\hat{y}=a+bx.
-\]</span></p>
+<p><strong>a) Estimation:</strong> We have to estimate the regression equation</p>
+<p><span class="math display">\[\hat{y}=a+bx.\]</span></p>
 <p>The sample means are</p>
-<p><span class="math display">\[
-\bar{x}=\frac{1+2+3+4+5+6}{6}=3.5,
+<p><span class="math display">\[\bar{x}=\frac{1+2+3+4+5+6}{6}=3.5,
 \qquad
-\bar{y}=\frac{8+11+13+17+18+22}{6}\approx14.833.
-\]</span></p>
+\bar{y}=\frac{8+11+13+17+18+22}{6}\approx14.833.\]</span></p>
 <p>The sum of cross-products and the sum of squared deviations for (x) are</p>
-<p><span class="math display">\[
-S_{xy}=\sum xy -n \bar{x} \bar{y}=48.5 \ \ (plz. check)
-\]</span></p>
-<p><span class="math display">\[
-SS_x=\sum x^2-n \bar{x}^2=17.5.
-\]</span></p>
+<p><span class="math display">\[S_{xy}=\sum xy -n \bar{x} \bar{y}=48.5 \ \ (plz. check)\]</span></p>
+<p><span class="math display">\[SS_x=\sum x^2-n \bar{x}^2=17.5.\]</span></p>
 <p>Therefore, the estimated slope is</p>
-<p><span class="math display">\[
-b=\frac{SS_{xy}}{SS_x}
+<p><span class="math display">\[b=\frac{S_{xy}}{SS_x}
 =\frac{48.5}{17.5}
-\approx2.77.
-\]</span></p>
+\approx2.77.\]</span></p>
 <p>The estimated intercept is</p>
-<p><span class="math display">\[
-a=\bar{y}-b\bar{x}
+<p><span class="math display">\[a=\bar{y}-b\bar{x}
 =14.833-(2.77)(3.5)
-\approx5.13.
-\]</span></p>
+\approx5.13.\]</span></p>
 <p>So the estimated regression equation is</p>
-<p><span class="math display">\[
-\boxed{\hat{y}=5.13+2.77x}.
-\]</span></p>
-<p><strong>Prediction:</strong></p>
-<p>For a trip of (450) km, (x=4.5). The predicted fuel use is</p>
-<p><span class="math display">\[
-\hat{y}=5.13+2.77(4.5)\approx17.6\text{ liters}.
-\]</span></p>
+<p><span class="math display">\[\boxed{\hat{y}=5.13+2.77x}.\]</span></p>
+<p><strong>b) Prediction:</strong> For a trip of (450) km, (x=4.5). The predicted fuel use is</p>
+<p><span class="math display">\[\hat{y}=5.13+2.77(4.5)\approx17.6\text{ liters}.\]</span></p>
 <p>The model estimates that the trip will use about <strong>17.6 liters of fuel</strong>.</p>
 
 
