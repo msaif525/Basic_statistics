@@ -310,6 +310,36 @@
     ]
   },
   {
+    "objectID": "correlation.html",
+    "href": "correlation.html",
+    "title": "6  Correlation analysis",
+    "section": "",
+    "text": "6.1 Definition\nCorrelation measures the degree and direction of linear relationship between two quantitative variables.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Correlation analysis</span>"
+    ]
+  },
+  {
+    "objectID": "correlation.html#scatter-diagram",
+    "href": "correlation.html#scatter-diagram",
+    "title": "6  Correlation analysis",
+    "section": "6.2 Scatter diagram",
+    "text": "6.2 Scatter diagram\nis a graphical technique to identify correlation between variables. For example,say we have two variables \\(X\\) and \\(Y\\) with \\(n\\) pairs of observations \\((x_i, y_i)\\). For \\(n=15\\) observations :\n\n\n\nObservation\n\\(x\\)\n\\(y\\)\n\n\n\n\n1\n10\n22\n\n\n2\n11\n25\n\n\n3\n11\n23\n\n\n4\n12\n28\n\n\n5\n13\n30\n\n\n6\n14\n32\n\n\n7\n14\n35\n\n\n8\n15\n34\n\n\n9\n16\n38\n\n\n10\n17\n40\n\n\n11\n17\n37\n\n\n12\n18\n43\n\n\n13\n19\n45\n\n\n14\n19\n42\n\n\n15\n20\n48\n\n\n\nScatter Plot of X and Y ( see Figure 6.1)\n\n\n\n\n\n\n\n\nFigure 6.1: Scatter plot of X and Y with a linear trend line.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Correlation analysis</span>"
+    ]
+  },
+  {
+    "objectID": "correlation.html#measures-of-correlation-coefficient-of-correlation-r",
+    "href": "correlation.html#measures-of-correlation-coefficient-of-correlation-r",
+    "title": "6  Correlation analysis",
+    "section": "6.3 Measures of correlation: Coefficient of correlation (r)",
+    "text": "6.3 Measures of correlation: Coefficient of correlation (r)\nCoefficient of correlation (r):\n\\[r=\\frac{\\sum xy-n (\\bar x) (\\bar y)}{\\sqrt{ (\\sum x^2-n\\bar x^2\\ \\ )} \\sqrt {(\\sum y^2-n \\bar y^2 \\ \\ )}}=\\frac{S_{xy}}{S_x \\cdot S_y}  (say)\\] Properties:\na) \\(r\\) always lies between -1 and +1 (inclusive) that is \\(-1 \\le r\\le +1\\)\nb) \\(r\\) close to +1 implies strong positive correlation\nc) \\(r\\) close to -1 implies strong negative correlation\nd) \\(r\\) close to 0 implies weak/very weak correlation (may be positive or negative)\nExample 1: Compute correlation coefficient and interpret its value.\n\n\n\nObservation\n\\(x\\)\n\\(y\\)\n\n\n\n\n1\n10\n22\n\n\n2\n12\n26\n\n\n3\n14\n29\n\n\n4\n16\n35\n\n\n5\n18\n41\n\n\n6\n20\n46\n\n\n\nSolution:\n\n\n[1] 1420\n\n\nHere, \\(n=6\\)\n\n\\(\\sum x=90\\)\n\\(\\sum x^2=1420\\)\n\\(\\sum y=199\\)\n\\(\\sum y^2=7023\\)\n\\(\\sum xy=3156\\)\n\\(\\bar x=\\frac{\\sum x}{n}=90/6=15\\)\n\\(\\bar y= 33.17\\)\n\n\\[S_{xy}=\\sum xy-n. \\bar x. \\bar y=3156-6(15)(33.17)=170.7\\]\n\\[S_x=\\sqrt{\\sum x^2-n. \\bar x^2}=\\sqrt{1420-6(15^2)}=\\sqrt {70}=8.37\\]\n\\[S_y=\\sqrt{\\sum y^2-n. \\bar y^2}=\\sqrt{7023-6(33.17^2)}=\\sqrt{421.51}=20.53\\]\nHence, \\[\nr=\\frac{S_{xy}}{S_x \\cdot S_y}=\\frac{170.7}{(8.36) (20.53)}=0.9946\n\\]\nSo X and Y are very strongly positively correlated.\nExample 2: Negative Correlation (Ans: \\(r = -0.9986\\))\n\n\n\nObservation\n\\(x\\)\n\\(y\\)\n\n\n\n\n1\n10\n47\n\n\n2\n12\n42\n\n\n3\n14\n38\n\n\n4\n16\n33\n\n\n5\n18\n27\n\n\n6\n20\n23",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Correlation analysis</span>"
+    ]
+  },
+  {
     "objectID": "summary.html",
     "href": "summary.html",
     "title": "12  Summary",
