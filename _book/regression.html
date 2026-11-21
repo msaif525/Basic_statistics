@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -258,6 +287,119 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>We all know the equation of straight line:</p>
+<p><span class="math display">\[y=mx+c\]</span></p>
+<p>Which shows <em>deterministic</em> relation between x and y. But in reality relation between x and y may not be deterministic; rather <em>random/ stochastic</em>. For example for same input of x we may find different output y.</p>
+<p>Here comes the concept of regression. More precisely if <span class="math inline">\(Y\)</span> is a random variable which depends on a fixed variable <span class="math inline">\(x\)</span> (independent variable) with some extent then the <em>stochastic relation</em> between <span class="math inline">\(x\)</span> and <span class="math inline">\(Y\)</span> is represented as:</p>
+<p><span id="eq-simpl_lr"><span class="math display">\[Y=A+Bx +e \tag{7.1}\]</span></span></p>
+<p>Where <span class="math inline">\(e\)</span> is the error term and assumed to be normally distributed with mean 0 and variance <span class="math inline">\(\sigma^2\)</span>.</p>
+<p>The equation <a href="#eq-simpl_lr" class="quarto-xref">Equation&nbsp;<span>7.1</span></a> is called the <strong>Simple Linear Regression (SLR).</strong></p>
+<p>Our goal is to estimate the parameters <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> from sample data. One approach is to estimate <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> by minimizing error sum of squares, alos known as <strong>Least Square</strong> estimate by the following formulas:</p>
+<ul>
+<li><p>Estimator of <span class="math inline">\(B\)</span>:</p>
+<p><span class="math display">\[b=\frac{\sum xy-n \cdot \bar x \cdot \bar y}{\sum x^2-n\cdot \bar x^2}=\frac{S_{xy}}{SS_x}  \ \ \ \ (say)\]</span></p></li>
+<li><p>Estimator of <span class="math inline">\(A\)</span>:</p></li>
+</ul>
+<p><span class="math display">\[a=\bar y-b \bar x\]</span></p>
+<p>After having the value of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> from sample data our estimated simple linear regression line becomes:</p>
+<p><span class="math display">\[\hat y=a+b x\]</span></p>
+<p><strong>An scatter plot with estimated /fitted regression line:</strong></p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-slr" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="regression_files/figure-html/fig-slr-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-slr-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;7.1: Estimated linear regression line of Y on x (n = 15).
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p><strong>Example</strong></p>
+<p>Consider a delivery company estimating fuel used for a trip from the distance traveled.</p>
+<p>Let (x) be distance in hundreds of kilometers, and (y) be fuel used in liters:</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Trip</th>
+<th style="text-align: right;">Distance (x) (100 km)</th>
+<th style="text-align: right;">Fuel (y) (L)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">8</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">11</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td style="text-align: right;">3</td>
+<td style="text-align: right;">13</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td style="text-align: right;">4</td>
+<td style="text-align: right;">17</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td style="text-align: right;">5</td>
+<td style="text-align: right;">18</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td style="text-align: right;">6</td>
+<td style="text-align: right;">22</td>
+</tr>
+</tbody>
+</table>
+<p>We estimate the regression equation</p>
+<p><span class="math display">\[
+\hat{y}=a+bx.
+\]</span></p>
+<p>The sample means are</p>
+<p><span class="math display">\[
+\bar{x}=\frac{1+2+3+4+5+6}{6}=3.5,
+\qquad
+\bar{y}=\frac{8+11+13+17+18+22}{6}\approx14.833.
+\]</span></p>
+<p>The sum of cross-products and the sum of squared deviations for (x) are</p>
+<p><span class="math display">\[
+SS_{xy}=\sum_{i=1}^{6}(x_i-\bar{x})(y_i-\bar{y})=48.5,
+\]</span></p>
+<p><span class="math display">\[
+SS_x=\sum_{i=1}^{6}(x_i-\bar{x})^2=17.5.
+\]</span></p>
+<p>Therefore, the estimated slope is</p>
+<p><span class="math display">\[
+b=\frac{SS_{xy}}{SS_x}
+=\frac{48.5}{17.5}
+\approx2.77.
+\]</span></p>
+<p>The estimated intercept is</p>
+<p><span class="math display">\[
+a=\bar{y}-b\bar{x}
+=14.833-(2.77)(3.5)
+\approx5.13.
+\]</span></p>
+<p>So the estimated regression equation is</p>
+<p><span class="math display">\[
+\boxed{\hat{y}=5.13+2.77x}.
+\]</span></p>
+<p>For a trip of (450) km, (x=4.5). The predicted fuel use is</p>
+<p><span class="math display">\[
+\hat{y}=5.13+2.77(4.5)\approx17.6\text{ liters}.
+\]</span></p>
+<p>The model estimates that the trip will use about <strong>17.6 liters of fuel</strong>.</p>
 
 
 
