@@ -94,7 +94,7 @@ df_pos <- tibble(
 )
 
 #sum(df_pos$y)
-sum(df_pos$x^2)
+#sum(df_pos$x^2)
 ```
 
 Here, $n=6$
