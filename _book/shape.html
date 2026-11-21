@@ -69,6 +69,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -233,8 +262,18 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#skewness" id="toc-skewness" class="nav-link active" data-scroll-target="#skewness"><span class="header-section-number">5.1</span> Skewness</a></li>
+  <li><a href="#kurtosis" id="toc-kurtosis" class="nav-link" data-scroll-target="#kurtosis"><span class="header-section-number">5.2</span> Kurtosis</a></li>
+  <li><a href="#measures-of-skewness-and-kurtosis" id="toc-measures-of-skewness-and-kurtosis" class="nav-link" data-scroll-target="#measures-of-skewness-and-kurtosis"><span class="header-section-number">5.3</span> Measures of skewness and kurtosis</a></li>
+  <li><a href="#example-810-marks" id="toc-example-810-marks" class="nav-link" data-scroll-target="#example-810-marks"><span class="header-section-number">5.4</span> <strong>Example (8/10 marks)</strong></a></li>
+  <li><a href="#exercise" id="toc-exercise" class="nav-link" data-scroll-target="#exercise"><span class="header-section-number">5.5</span> <strong>Exercise</strong></a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -258,8 +297,157 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p><strong>Measures of shape</strong> are tools that can be used to describe the shape of a distribution of data. In this section, we examine two measures of shape, <strong>skewness</strong> and <strong>kurtosis</strong>.</p>
+<section id="skewness" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="skewness"><span class="header-section-number">5.1</span> Skewness</h2>
+<p>Skewness refers to lack of symmetry or departure from symmetry. There are three types of skewness based on the histogram or density plot of data.</p>
+<p>a) <strong>Positive skewness</strong>/ Skewed right- where <em>mean&gt;median&gt;mode</em></p>
+<p>b) <strong>Symmetrical distribution</strong>- in a perfect symmetrical distribution <em>mean=median=mode</em></p>
+<p>c) <strong>Negative skewness</strong>/ Skewed left- where <em>mean&lt;median&lt;mode</em></p>
+<p>The typical example of skewness is exhibited in <a href="#fig-skewness" class="quarto-xref">Figure&nbsp;<span>5.1</span></a> with the relative position of mean, median and mode.</p>
+<div id="fig-skewness" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-skewness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Skewness.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" width="516">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-skewness-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: Types of skewness and relative position of mean, median, mode
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="kurtosis" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="kurtosis"><span class="header-section-number">5.2</span> Kurtosis</h2>
+<p><strong>Kurtosis</strong> <em>describes the amount of peakedness of a distribution</em>.</p>
+<ul>
+<li><p>Distributions that are high and thin are referred to as <strong>leptokurtic</strong> distributions.</p></li>
+<li><p>Distributions that are flat and spread out are referred to as <strong>platykurtic</strong> distributions.</p></li>
+<li><p>Between these two types are distributions that are more “normal” in shape, referred to as <strong>mesokurtic</strong> distributions.</p></li>
+</ul>
+<p>These three types of kurtosis are illustrated in <a href="#fig-kurtosis" class="quarto-xref">Figure&nbsp;<span>5.2</span></a>.</p>
+<div id="fig-kurtosis" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-kurtosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="Kurtosis.png" class="img-fluid figure-img" width="416">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-kurtosis-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: Different types of kurtosis
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="measures-of-skewness-and-kurtosis" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="measures-of-skewness-and-kurtosis"><span class="header-section-number">5.3</span> Measures of skewness and kurtosis</h2>
+<p>The coefficient of Skewness, <span class="math display">\[S_k=\frac{1}{n}\frac{\sum (X-\bar X)^3}{s^3}\]</span></p>
+<p>Decision:</p>
+<ol type="a">
+<li><span class="math inline">\(S_k&gt;0\)</span> implies positive skewness</li>
+<li><span class="math inline">\(S_k&lt;0\)</span> implies negative skewness</li>
+<li><span class="math inline">\(S_k \approx 0\)</span> implies symmetric/ zero skewness</li>
+</ol>
+<p>The coefficient of kurtosis,</p>
+<p><span class="math display">\[
+K_t=\frac{1}{n}\frac{\sum (X-\bar X)^4}{s^4}\]</span></p>
+<p>Decision:</p>
+<ol type="a">
+<li><p><span class="math inline">\(K_t &gt; 3\)</span> implies <em>leptokurtic</em></p></li>
+<li><p><span class="math inline">\(K_t &lt;3\)</span> implies <em>platykurtic</em></p></li>
+<li><p><span class="math inline">\(K_t \approx 3\)</span> implies <em>mesokurtic</em></p></li>
+</ol>
+</section>
+<section id="example-810-marks" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="example-810-marks"><span class="header-section-number">5.4</span> <strong>Example (8/10 marks)</strong></h2>
+<ol type="a">
+<li><p><strong>Calculate</strong> the coefficient of skeweness (<span class="math inline">\(S_k\)</span>) and coefficient of kurtosis (<span class="math inline">\(K_t\)</span>).</p></li>
+<li><p><strong>Comment</strong> about the skewness and kurtosis of the data</p></li>
+</ol>
+<p><strong>Data:</strong> 3,5,6,9,12</p>
+<p><u>Solution:</u></p>
+<ul>
+<li>Here sample mean, <span class="math inline">\(\bar x=\frac{\sum x}{n}=\frac{3+5+...+12}{5}=7\)</span></li>
+</ul>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th style="text-align: center;"><span class="math inline">\(x\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((x-\bar x)\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((x-\bar x)^2\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((x-\bar x)^3\)</span></th>
+<th style="text-align: center;"><span class="math inline">\((x-\bar x)^4\)</span></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">3</td>
+<td style="text-align: center;">-4</td>
+<td style="text-align: center;">16</td>
+<td style="text-align: center;">-64</td>
+<td style="text-align: center;">256</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">-2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">-8</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">6</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">-1</td>
+<td style="text-align: center;">1</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;">9</td>
+<td style="text-align: center;">2</td>
+<td style="text-align: center;">4</td>
+<td style="text-align: center;">8</td>
+<td style="text-align: center;">16</td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">12</td>
+<td style="text-align: center;">5</td>
+<td style="text-align: center;">25</td>
+<td style="text-align: center;">125</td>
+<td style="text-align: center;">625</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"><span class="math inline">\(\sum x=35\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum (x-\bar x)=0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum(x-\bar x)^2=50\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum(x-\bar x)^3=60\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\sum (x-\bar x)^4=914\)</span></td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>Sample standard deviation,</p>
+<p><span class="math display">\[s=\sqrt \frac{\sum(x-\bar x)^2}{n-1}=\sqrt \frac{50}{5-1}=3.54 \ \  (approx.)\]</span></p></li>
+<li><p><strong>Coefficient of skewness</strong></p>
+<p><span class="math display">\[S_k=\frac{1}{n} \frac{\sum (x-\bar x)^3}{s^3}=0.27 &gt;0\]</span></p></li>
+</ul>
+<p>So the distribution is <em>positively skewed</em>.</p>
+<ul>
+<li><strong>Coefficient of kurtosis</strong></li>
+</ul>
+<p><span class="math display">\[K_t=\frac{1}{n} \frac{\sum (x-\bar x)^4}{s^4}=1.16&lt;3\]</span></p>
+<p>So the distribution is <em>platykurtic</em>.</p>
+</section>
+<section id="exercise" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="exercise"><span class="header-section-number">5.5</span> <strong>Exercise</strong></h2>
+<p>A sample of 7 data entry clerks employed in the Harry County Tax Office revised the following <em>number of tax records</em> last hour: 100, 75, 70, 65, 80, 68 and 50.</p>
+<p><strong>Comment</strong> about <em>skewness</em> and <em>kurtosis</em> of the <em>number of tax records</em>.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
